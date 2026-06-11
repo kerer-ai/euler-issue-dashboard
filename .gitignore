@@ -1,0 +1,8 @@
+.superpowers/
+docs/
+CLAUDE.md
+CLAUDE.md:Zone.Identifier
+issues-raw.json
+dashboard.html
+*.pyc
+__pycache__/

@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Issue Dashboard — gitcode-dev/euler-api-list</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --blue: #1a73e8; --blue-bg: #e8f0fe;
+  --green: #0d9488; --green-bg: #e6f7f5;
+  --red: #ef4444; --red-bg: #fef2f2;
+  --purple: #7c3aed; --purple-bg: #f3eeff;
+  --orange: #f59e0b; --orange-bg: #fff7ed;
+  --teal: #0891b2; --teal-bg: #ecfeff;
+  --indigo: #4f46e5; --indigo-bg: #eef2ff;
+  --bg: #f5f6f8; --card-bg: #fff;
+  --text: #1a1a2e; --text-muted: #6b7280;
+  --border: #e5e7eb;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.06);
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --radius: 10px;
+  --banner-bg-start: #1a1a2e;
+  --banner-bg-end: #16213e;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+.header {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: var(--shadow);
+}
+.header h1 { font-size: 18px; font-weight: 600; }
+.header h1 span { color: var(--text-muted); font-weight: 400; font-size: 13px; }
+.header-meta { font-size: 12px; color: var(--text-muted); white-space: nowrap; }
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 28px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+.card-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.kpi-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 16px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: all 0.15s;
+  user-select: none;
+}
+.kpi-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.kpi-card .kpi-value { font-size: 32px; font-weight: 700; line-height: 1.1; }
+.kpi-card .kpi-label { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+.kpi-card .kpi-sub { font-size: 10px; margin-top: 3px; }
+.kpi-card.active { box-shadow: 0 0 0 2px var(--blue); }
+
+.charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.bottom-row {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 14px;
+}
+
+.table-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 10px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  flex: 1;
+}
+
+#issueTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+#issueTable thead th {
+  background: #fafbfc;
+  padding: 8px 10px;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+}
+#issueTable tbody td {
+  padding: 7px 10px;
+  border-bottom: 1px solid #f3f4f6;
+}
+#issueTable tbody tr:hover { background: #f9fafb; }
+
+/* Placeholder states */
+.insight-banner {
+  background: linear-gradient(135deg, var(--banner-bg-start), var(--banner-bg-end));
+  color: #e2e8f0;
+  border-radius: var(--radius);
+  padding: 18px 24px;
+  margin-bottom: 14px;
+  line-height: 1.7;
+  font-size: 14px;
+}
+.insight-banner .ib-header {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+  font-size: 15px; font-weight: 700; color: #fff;
+}
+.insight-banner .ib-body { opacity: 0.92; }
+.insight-banner .ib-body strong.highlight-blue { color: #60a5fa; font-weight: 700; }
+.insight-banner .ib-body strong.highlight-yellow { color: #fbbf24; font-weight: 700; }
+.insight-banner .ib-body strong.highlight-red { color: #f87171; font-weight: 700; }
+
+.trend-bars { display: flex; align-items: flex-end; gap: 6px; height: 180px; padding: 0 4px; }
+.trend-bar-wrap { flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; cursor: pointer; position: relative; }
+.trend-bar-wrap:hover .trend-bar { opacity: 0.75; }
+.trend-bar { width: 100%; max-width: 36px; border-radius: 4px 4px 0 0; transition: opacity 0.15s; min-height: 4px; }
+.trend-bar.normal { background: #93c5fd; }
+.trend-bar.peak { background: var(--red); }
+.trend-count { font-size: 10px; font-weight: 600; margin-bottom: 2px; order: -1; }
+.trend-label { font-size: 9px; color: var(--text-muted); margin-top: 4px; white-space: nowrap; }
+.chart-insight { font-size: 10px; color: var(--red); margin-top: 8px; text-align: right; }
+
+.comm-stack-list { display: flex; flex-direction: column; gap: 8px; }
+.comm-row { display: flex; align-items: center; font-size: 12px; }
+.comm-row .comm-name { width: 80px; font-weight: 600; flex-shrink: 0; }
+.comm-row .comm-bar-wrap { flex: 1; height: 22px; background: var(--border); border-radius: 11px; overflow: hidden; display: flex; cursor: pointer; }
+.comm-row .comm-bar-wrap .comm-seg { display: flex; align-items: center; justify-content: center; font-size: 9px; color: #fff; font-weight: 600; overflow: hidden; transition: opacity 0.15s; }
+.comm-row .comm-bar-wrap .comm-seg:hover { opacity: 0.8; }
+.comm-row .comm-count { width: 32px; text-align: right; font-weight: 700; margin-left: 10px; flex-shrink: 0; }
+.seg-enhancement { background: var(--green); }
+.seg-question { background: var(--purple); }
+.seg-bug { background: var(--red); }
+.seg-other { background: #9ca3af; }
+.chart-legend { display: flex; gap: 12px; justify-content: flex-end; font-size: 10px; margin-top: 10px; }
+.chart-legend span { display: inline-flex; align-items: center; gap: 3px; }
+.chart-legend .legend-dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+
+.aging-body { display: flex; flex-direction: column; gap: 10px; }
+.aging-item { cursor: pointer; }
+.aging-item .aging-header { display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px; }
+.aging-item .aging-label { font-weight: 500; }
+.aging-item .aging-count { font-weight: 700; }
+.aging-bar-bg { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+.aging-bar-fill { height: 100%; border-radius: 4px; transition: width 0.3s ease; }
+.aging-item:nth-child(1) .aging-bar-fill { background: var(--green); }
+.aging-item:nth-child(2) .aging-bar-fill { background: #60a5fa; }
+.aging-item:nth-child(3) .aging-bar-fill { background: var(--orange); }
+.aging-item:nth-child(4) .aging-bar-fill { background: var(--red); }
+.aging-summary { font-size: 10px; color: var(--red); margin-top: 4px; }
+
+.filter-tags { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.filter-tag { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: 14px; font-size: 11px; font-weight: 500; background: var(--blue-bg); color: var(--blue); }
+.filter-tag .ft-close { cursor: pointer; font-size: 13px; line-height: 1; }
+.filter-tag .ft-close:hover { color: var(--red); }
+.filter-clear { font-size: 11px; color: var(--red); cursor: pointer; font-weight: 500; margin-left: 4px; }
+.filter-clear:hover { text-decoration: underline; }
+.quick-filters { display: flex; gap: 4px; }
+.qf-chip { padding: 3px 10px; border-radius: 12px; font-size: 11px; cursor: pointer; border: 1px solid var(--border); background: #f9fafb; transition: all 0.15s; }
+.qf-chip:hover { border-color: var(--blue); color: var(--blue); }
+.qf-chip.active { background: var(--blue-bg); color: var(--blue); border-color: var(--blue); font-weight: 600; }
+.result-info { font-size: 12px; color: var(--text-muted); padding-bottom: 8px; }
+.result-info strong { color: var(--text); }
+
+.issue-link { color: var(--blue); text-decoration: none; font-weight: 500; max-width: 480px; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.issue-link:hover { text-decoration: underline; }
+.mini-chip { display: inline-block; padding: 2px 7px; border-radius: 10px; font-size: 10px; font-weight: 600; white-space: nowrap; }
+.mc-enhancement { background: var(--green-bg); color: var(--green); }
+.mc-bug { background: var(--red-bg); color: var(--red); }
+.mc-question { background: var(--purple-bg); color: var(--purple); }
+.mc-other { background: #f3f4f6; color: #6b7280; }
+.mc-community { background: var(--indigo-bg); color: var(--indigo); margin-right: 2px; }
+.mc-status { background: var(--orange-bg); color: var(--orange); margin-right: 2px; }
+.age-normal { color: var(--text-muted); }
+.age-warn { color: var(--orange); font-weight: 600; }
+.age-danger { color: var(--red); font-weight: 700; }
+
+@media (max-width: 1200px) {
+  .kpi-row { grid-template-columns: repeat(3, 1fr); }
+  .bottom-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 900px) {
+  .charts-row { grid-template-columns: 1fr; }
+  .kpi-row { grid-template-columns: repeat(2, 1fr); }
+  .container { padding: 12px 16px; }
+  .header { padding: 12px 16px; }
+}
+@media (max-width: 600px) {
+  .kpi-row { grid-template-columns: 1fr 1fr; }
+  .comm-row .comm-name { width: 60px; font-size: 10px; }
+  .bottom-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Issue Dashboard <span>/ gitcode-dev/euler-api-list</span></h1>
+  <div class="header-meta" id="headerMeta"></div>
+</div>
+<div class="container">
+  <div class="insight-banner" id="insightBanner"></div>
+  <div class="kpi-row" id="kpiRow"></div>
+  <div class="charts-row">
+    <div class="card chart-card" id="trendChart">
+      <div class="card-title">&#x1F4C8; 每周新增 Issue 趋势</div>
+      <div class="chart-body" id="trendBody"></div>
+      <div class="chart-insight" id="trendInsight"></div>
+    </div>
+    <div class="card chart-card" id="communityChart">
+      <div class="card-title">&#x1F4CA; 各社区 Issue 构成</div>
+      <div class="chart-body" id="communityBody"></div>
+      <div class="chart-legend" id="communityLegend"></div>
+    </div>
+  </div>
+  <div class="bottom-row">
+    <div class="card aging-card" id="agingCard">
+      <div class="card-title">&#x23F3; Issue 老化分布</div>
+      <div class="aging-body" id="agingBody"></div>
+    </div>
+    <div class="card table-card" id="tableCard">
+      <div class="table-toolbar">
+        <div class="filter-tags" id="filterTags"></div>
+        <div class="quick-filters" id="quickFilters"></div>
+      </div>
+      <div class="result-info" id="resultInfo"></div>
+      <div class="table-wrap">
+        <table id="issueTable">
+          <thead>
+            <tr>
+              <th style="width:55px">#</th>
+              <th>标题</th>
+              <th style="width:65px">类型</th>
+              <th style="width:150px">社区</th>
+              <th style="width:120px">状态</th>
+              <th style="width:85px">反馈人</th>
+              <th style="width:95px">创建时间</th>
+              <th style="width:55px">年龄</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+let allIssues = [];
+
+let activeFilters = {};
+let currentTypeFilter = '';
+
+function applyFilters() {
+  let filtered = allIssues;
+
+  if (currentTypeFilter) {
+    filtered = filtered.filter(i => i.type === currentTypeFilter);
+  }
+
+  for (const [dim, val] of Object.entries(activeFilters)) {
+    if (dim === 'type') {
+      filtered = filtered.filter(i => i.type === val);
+    } else if (dim === 'community') {
+      filtered = filtered.filter(i => (i.communities || []).includes(val));
+    } else if (dim === 'age') {
+      if (val === 'over30') filtered = filtered.filter(i => calcAge(i.created_at) > 30);
+      else if (val === '15to30') filtered = filtered.filter(i => { const a = calcAge(i.created_at); return a >= 15 && a <= 30; });
+      else if (val === '8to14') filtered = filtered.filter(i => { const a = calcAge(i.created_at); return a >= 8 && a <= 14; });
+      else if (val === '0to7') filtered = filtered.filter(i => calcAge(i.created_at) <= 7);
+    } else if (dim === 'week') {
+      filtered = filtered.filter(i => getWeekKey(i.created_at) === val);
+    }
+  }
+
+  updateChipStates();
+  renderFilterTags(activeFilters);
+  renderTypeFilter(currentTypeFilter);
+  renderTable(filtered);
+}
+
+function setFilter(dim, val) {
+  if (activeFilters[dim] === val) { delete activeFilters[dim]; }
+  else { activeFilters[dim] = val; }
+  applyFilters();
+}
+
+function removeFilter(dim) { delete activeFilters[dim]; applyFilters(); }
+function clearAllFilters() { activeFilters = {}; currentTypeFilter = ''; applyFilters(); }
+
+function quickFilterType(type) {
+  currentTypeFilter = currentTypeFilter === type ? '' : type;
+  applyFilters();
+}
+
+function renderFilterTags(filters) {
+  const dimNames = { type: '类型', community: '社区', age: '年龄', week: '周' };
+  const tags = Object.entries(filters).map(([k, v]) => {
+    const label = `${dimNames[k] || k}: ${v === 'over30' ? '30天以上' : v === '15to30' ? '15-30天' : v === '8to14' ? '8-14天' : v === '0to7' ? '7天内' : v}`;
+    return `<span class="filter-tag">${escapeHtml(label)} <span class="ft-close" onclick="removeFilter('${k}')">✕</span></span>`;
+  }).join('');
+  const clearBtn = Object.keys(filters).length > 0 ? `<span class="filter-clear" onclick="clearAllFilters()">清除全部</span>` : '';
+  document.getElementById('filterTags').innerHTML = tags + clearBtn;
+}
+
+function updateChipStates() {
+  // Quick filter chips
+  document.querySelectorAll('.qf-chip').forEach(chip => {
+    chip.classList.toggle('active', currentTypeFilter === chip.dataset.type || (chip.dataset.type === '' && !currentTypeFilter));
+  });
+  // Aging items
+  document.querySelectorAll('.aging-item').forEach(item => {
+    const min = parseInt(item.dataset.ageMin);
+    let range;
+    if (min > 30) range = 'over30';
+    else if (min >= 15) range = '15to30';
+    else if (min >= 8) range = '8to14';
+    else range = '0to7';
+    item.style.opacity = activeFilters.age && activeFilters.age !== range ? '0.4' : '1';
+  });
+  // Trend bars
+  document.querySelectorAll('.trend-bar-wrap').forEach(wrap => {
+    wrap.style.opacity = activeFilters.week && activeFilters.week !== wrap.dataset.week ? '0.3' : '1';
+  });
+}
+
+function setupEventDelegation() {
+  document.addEventListener('click', function(e) {
+    // Quick filter chips
+    if (e.target.closest('.qf-chip')) {
+      const chip = e.target.closest('.qf-chip');
+      quickFilterType(chip.dataset.type);
+      return;
+    }
+    // Trend bar wraps
+    if (e.target.closest('.trend-bar-wrap')) {
+      const wrap = e.target.closest('.trend-bar-wrap');
+      setFilter('week', wrap.dataset.week);
+      return;
+    }
+    // Community segments
+    if (e.target.closest('.comm-seg')) {
+      const seg = e.target.closest('.comm-seg');
+      const community = seg.dataset.community;
+      const type = seg.dataset.type;
+      if (activeFilters.community === community && activeFilters.type === type) {
+        delete activeFilters.community;
+        delete activeFilters.type;
+      } else {
+        activeFilters.community = community;
+        activeFilters.type = type;
+      }
+      applyFilters();
+      return;
+    }
+    // Aging items
+    if (e.target.closest('.aging-item')) {
+      const item = e.target.closest('.aging-item');
+      const min = parseInt(item.dataset.ageMin);
+      let range;
+      if (min > 30) range = 'over30';
+      else if (min >= 15) range = '15to30';
+      else if (min >= 8) range = '8to14';
+      else range = '0to7';
+      setFilter('age', range);
+      return;
+    }
+    // Mini chip clicks on table (type/community/status)
+    if (e.target.closest('.mc-enhancement, .mc-bug, .mc-question, .mc-other')) {
+      const chip = e.target.closest('.mc-enhancement, .mc-bug, .mc-question, .mc-other');
+      const typeClass = [...chip.classList].find(c => c.startsWith('mc-'));
+      const typeMap = { 'mc-enhancement': 'enhancement', 'mc-bug': 'bug', 'mc-question': 'question', 'mc-other': 'other' };
+      setFilter('type', typeMap[typeClass]);
+      return;
+    }
+    if (e.target.closest('.mc-community')) {
+      const chip = e.target.closest('.mc-community');
+      setFilter('community', chip.textContent.trim());
+      return;
+    }
+  });
+}
+
+async function init() {
+  try {
+    const resp = await fetch('issues-data.json?t=' + Date.now());
+    allIssues = await resp.json();
+    generateInsight(allIssues);
+    renderKpiRow(allIssues);
+    renderTrendChart(allIssues);
+    renderCommunityChart(allIssues);
+    renderAging(allIssues);
+    applyFilters();
+    setupEventDelegation();
+  } catch(e) {
+    document.getElementById('insightBanner').innerHTML = `<div class="ib-header">⚠ 数据加载失败</div><div class="ib-body">${escapeHtml(e.message)}</div>`;
+    document.getElementById('headerMeta').textContent = '数据加载失败';
+  }
+}
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+function calcAge(createdAt) {
+  if (!createdAt) return 0;
+  return Math.floor((new Date() - new Date(createdAt)) / 86400000);
+}
+
+function median(arr) {
+  if (!arr || !arr.length) return 0;
+  const sorted = [...arr].sort((a, b) => a - b);
+  const mid = Math.floor(sorted.length / 2);
+  return sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+}
+
+function generateInsight(issues) {
+  if (!issues || !issues.length) return;
+  const now = new Date();
+  const getAge = i => Math.floor((now - new Date(i.created_at)) / 86400000);
+
+  const over30 = issues.filter(i => getAge(i) > 30).length;
+  const unassigned = issues.filter(i => !i.assignees || (i.assignees || []).length === 0).length;
+  const unassignedPct = Math.round(unassigned / issues.length * 100);
+  const noStatus = issues.filter(i => (i.status_tags || []).length === 0).length;
+  const noStatusPct = Math.round(noStatus / issues.length * 100);
+
+  // Community top 2
+  const commCount = {};
+  issues.forEach(i => (i.communities || []).forEach(c => {
+    commCount[c] = (commCount[c] || 0) + 1;
+  }));
+  const top2 = Object.entries(commCount)
+    .filter(([c]) => c !== '其他')
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 2);
+
+  // Recent 2 weeks
+  const recent2Weeks = issues.filter(i => getAge(i) <= 14).length;
+
+  let html = `<span class="ib-header">📋 Issue 健康洞察</span>`;
+  html += `<span class="ib-body">`;
+  html += `当前 <strong class="highlight-blue">${issues.length}</strong> 个 open issues。`;
+  html += `近两周新增 <strong class="highlight-yellow">${recent2Weeks}</strong> 个。`;
+
+  if (over30 > 25) {
+    html += ` <strong class="highlight-red">${over30} 个 issue 超过30天未关闭</strong>`;
+    if (top2.length > 0) {
+      html += `，主要集中在 <strong>${escapeHtml(top2[0][0])}</strong>（${top2[0][1]}个）`;
+      if (top2[1]) html += ` 和 <strong>${escapeHtml(top2[1][0])}</strong>（${top2[1][1]}个）`;
+    }
+    html += `。`;
+  } else {
+    html += ` 超30天未关的 issue 共 ${over30} 个，处于可控范围。`;
+  }
+
+  if (unassignedPct > 80) {
+    html += ` <strong class="highlight-red">${unassignedPct}% 的 issue 未分配负责人</strong>，建议各社区尽快完成 triage。`;
+  }
+
+  if (noStatusPct > 50) {
+    html += ` ${noStatusPct}% 的 issue 缺少状态标签，数据质量需关注。`;
+  }
+  html += `</span>`;
+
+  document.getElementById('insightBanner').innerHTML = html;
+  document.getElementById('headerMeta').textContent =
+    `数据更新: ${now.toLocaleDateString('zh-CN')} · ${issues.length} 个 open issues`;
+}
+
+function getWeekKey(dateStr) {
+  const d = new Date(dateStr);
+  d.setHours(0, 0, 0, 0);
+  d.setDate(d.getDate() + 3 - (d.getDay() + 6) % 7);
+  const week1 = new Date(d.getFullYear(), 0, 4);
+  const weekNum = Math.round(((d - week1) / 86400000 - 3 + (week1.getDay() + 6) % 7) / 7);
+  return `${d.getFullYear()}-W${String(weekNum).padStart(2, '0')}`;
+}
+
+function renderTrendChart(issues) {
+  if (!issues || !issues.length) return;
+  const weekly = {};
+  const weekOrder = [];
+  issues.forEach(i => {
+    const key = getWeekKey(i.created_at);
+    if (!weekly[key]) { weekly[key] = 0; weekOrder.push(key); }
+    weekly[key]++;
+  });
+  weekOrder.sort();
+
+  // Show only last 16 weeks for readability
+  const displayWeeks = weekOrder.slice(-16);
+  const values = displayWeeks.map(w => weekly[w]);
+  const maxVal = Math.max(...values, 1);
+
+  const barMaxH = 140;
+
+  const bars = displayWeeks.map(w => {
+    const count = weekly[w];
+    const height = count > 0 ? Math.max(4, Math.round(count / maxVal * barMaxH)) : 0;
+    const isPeak = count === maxVal && count > 0;
+    const showCount = count > 0 ? count : '';
+    return `<div class="trend-bar-wrap" data-week="${w}">
+      <div class="trend-count">${showCount}</div>
+      <div class="trend-bar ${isPeak ? 'peak' : 'normal'}" style="height:${height}px"></div>
+      <div class="trend-label">${w.slice(5)}</div>
+    </div>`;
+  }).join('');
+
+  document.getElementById('trendBody').innerHTML = `<div class="trend-bars">${bars}</div>`;
+  document.getElementById('trendInsight').textContent = maxVal >= 15
+    ? `⚠ ${displayWeeks[displayWeeks.length - 1]} 周达到峰值 ${maxVal}（近16周最高），趋势上升中`
+    : '趋势平稳';
+}
+
+function renderCommunityChart(issues) {
+  if (!issues || !issues.length) return;
+  const communities = ['Ascend', 'CANN', 'openlibing', 'HiSpark', 'openEuler', 'OpenHarmony', 'openGauss', 'MindSpore', 'Cangjie'];
+  const commData = {};
+  communities.forEach(c => { commData[c] = { enhancement: 0, bug: 0, question: 0, other: 0, total: 0 }; });
+
+  issues.forEach(i => {
+    (i.communities || []).forEach(c => {
+      if (!commData[c]) commData[c] = { enhancement: 0, bug: 0, question: 0, other: 0, total: 0 };
+      commData[c][i.type] = (commData[c][i.type] || 0) + 1;
+      commData[c].total++;
+    });
+  });
+
+  const typeNames = { enhancement: '增强', bug: '缺陷', question: '咨询', other: '其他' };
+  const rows = Object.entries(commData)
+    .filter(([, d]) => d.total > 0)
+    .sort(([, a], [, b]) => b.total - a.total)
+    .map(([name, d]) => {
+      const segs = ['enhancement', 'question', 'bug', 'other']
+        .filter(t => d[t] > 0)
+        .map(t => {
+          const pct = Math.round(d[t] / d.total * 100);
+          return [t, pct, d[t]];
+        });
+      const bars = segs.map(([t, pct, count]) =>
+        `<div class="comm-seg seg-${t}" style="width:${pct}%" data-community="${name}" data-type="${t}" title="${typeNames[t]}: ${count}">${pct >= 12 ? typeNames[t] : ''}</div>`
+      ).join('');
+      return `<div class="comm-row">
+        <span class="comm-name">${name}</span>
+        <div class="comm-bar-wrap">${bars}</div>
+        <span class="comm-count">${d.total}</span>
+      </div>`;
+    }).join('');
+
+  document.getElementById('communityBody').innerHTML = `<div class="comm-stack-list">${rows}</div>`;
+  document.getElementById('communityLegend').innerHTML =
+    `<div class="chart-legend">
+      <span><span class="legend-dot" style="background:var(--green)"></span>增强</span>
+      <span><span class="legend-dot" style="background:var(--purple)"></span>咨询</span>
+      <span><span class="legend-dot" style="background:var(--red)"></span>缺陷</span>
+      <span><span class="legend-dot" style="background:#9ca3af"></span>其他</span>
+    </div>`;
+}
+
+function renderAging(issues) {
+  if (!issues || !issues.length) return;
+  const getAge = i => calcAge(i.created_at);
+  const buckets = [
+    { label: '≤7天', min: 0, max: 7 },
+    { label: '8-14天', min: 8, max: 14 },
+    { label: '15-30天', min: 15, max: 30 },
+    { label: '30天以上', min: 31, max: Infinity },
+  ];
+  const maxCount = Math.max(...buckets.map(b => issues.filter(i => {
+    const a = getAge(i); return a >= b.min && a <= b.max;
+  }).length), 1);
+
+  const items = buckets.map(b => {
+    const count = issues.filter(i => { const a = getAge(i); return a >= b.min && a <= b.max; }).length;
+    return `<div class="aging-item" data-age-min="${b.min}" data-age-max="${b.max}">
+      <div class="aging-header"><span class="aging-label">${b.label}</span><span class="aging-count">${count}</span></div>
+      <div class="aging-bar-bg"><div class="aging-bar-fill" style="width:${Math.round(count/maxCount*100)}%"></div></div>
+    </div>`;
+  }).join('');
+
+  const over30 = issues.filter(i => getAge(i) > 30).length;
+  document.getElementById('agingBody').innerHTML = items +
+    (over30 > 25 ? `<div class="aging-summary">⚠ ${Math.round(over30/issues.length*100)}% 超过30天未处理</div>` : '');
+}
+
+function renderKpiRow(issues) {
+  if (!issues || !issues.length) return;
+  const over30 = issues.filter(i => calcAge(i.created_at) > 30).length;
+  const ages = issues.map(i => calcAge(i.created_at));
+  const avgAge = Math.round(ages.reduce((a, b) => a + b, 0) / ages.length * 10) / 10;
+  const unassigned = issues.filter(i => (i.assignees || []).length === 0).length;
+  const unassignedPct = Math.round(unassigned / issues.length * 100);
+
+  // This week (W24 = June 8-14)
+  const now = new Date();
+  const weekStart = new Date(now.getFullYear(), now.getMonth(), now.getDate() - ((now.getDay() + 6) % 7));
+  const thisWeek = issues.filter(i => new Date(i.created_at) >= weekStart).length;
+
+  const noStatus = issues.filter(i => (i.status_tags || []).length === 0).length;
+  const noStatusPct = Math.round(noStatus / issues.length * 100);
+
+  const cards = [
+    { value: issues.length, label: 'Open Issues', sub: '全部未关闭', color: 'var(--blue)' },
+    { value: over30, label: '超30天未关', sub: over30 > 25 ? '⚠ 需关注' : '正常', color: over30 > 25 ? 'var(--red)' : 'var(--text)' },
+    { value: avgAge + '天', label: '平均年龄', sub: `中位数 ${median(ages)}天`, color: 'var(--orange)' },
+    { value: unassignedPct + '%', label: '未分配率', sub: unassignedPct > 80 ? '⚠ 需关注' : '正常', color: unassignedPct > 80 ? 'var(--red)' : 'var(--text)' },
+    { value: thisWeek, label: '本周新增', sub: 'W24 进行中', color: 'var(--green)' },
+    { value: noStatusPct + '%', label: '无状态标签', sub: noStatusPct > 50 ? '数据质量' : '正常', color: 'var(--purple)' },
+  ];
+
+  document.getElementById('kpiRow').innerHTML = cards.map(c =>
+    `<div class="kpi-card">
+      <div class="kpi-value" style="color:${c.color}">${c.value}</div>
+      <div class="kpi-label">${c.label}</div>
+      <div class="kpi-sub" style="color:${c.sub.includes('⚠') ? 'var(--red)' : 'var(--text-muted)'}">${c.sub}</div>
+    </div>`
+  ).join('');
+}
+
+function renderTypeFilter(activeType) {
+  const types = [
+    { value: '', label: '全部' },
+    { value: 'enhancement', label: '增强' },
+    { value: 'bug', label: '缺陷' },
+    { value: 'question', label: '咨询' },
+  ];
+  document.getElementById('quickFilters').innerHTML = types.map(t =>
+    `<span class="qf-chip${activeType === t.value ? ' active' : ''}" data-type="${t.value}">${t.label}</span>`
+  ).join('');
+}
+
+function renderTable(issues) {
+  if (!issues || !issues.length) {
+    document.getElementById('tableBody').innerHTML = '<tr><td colspan="8" style="text-align:center;padding:40px;color:var(--text-muted)">没有匹配的 issue</td></tr>';
+    document.getElementById('resultInfo').innerHTML = '共 <strong>0</strong> 个 issue';
+    return;
+  }
+
+  document.getElementById('resultInfo').innerHTML = `共 <strong>${issues.length}</strong> 个 issue`;
+
+  const typeNames = { enhancement: '增强', bug: '缺陷', question: '咨询', other: '其他' };
+  const getAge = i => calcAge(i.created_at);
+
+  document.getElementById('tableBody').innerHTML = issues.map(i => {
+    const age = getAge(i);
+    let ageClass = 'age-normal';
+    if (age > 30) ageClass = 'age-danger';
+    else if (age > 14) ageClass = 'age-warn';
+
+    return `<tr>
+      <td style="color:var(--text-muted)">#${i.number}</td>
+      <td><a class="issue-link" href="${i.html_url}" target="_blank" title="${escapeHtml(i.title)}">${escapeHtml(i.title)}</a></td>
+      <td><span class="mini-chip mc-${i.type}">${typeNames[i.type] || i.type}</span></td>
+      <td>${(i.communities || []).map(c => `<span class="mini-chip mc-community">${c}</span>`).join('')}</td>
+      <td>${(i.status_tags || []).length ? i.status_tags.map(t => `<span class="mini-chip mc-status">${escapeHtml(t)}</span>`).join('') : '<span style="color:var(--text-muted)">-</span>'}</td>
+      <td>${escapeHtml(i.reporter)}</td>
+      <td style="color:var(--text-muted);white-space:nowrap">${i.created_at.slice(0,10)}</td>
+      <td class="${ageClass}">${age}天</td>
+    </tr>`;
+  }).join('');
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>

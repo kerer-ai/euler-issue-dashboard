@@ -1,0 +1,3859 @@
+[
+  {
+    "number": "1932",
+    "title": "[诉求]- Gitcode相比于Gitee功能缺失、使用卡顿，影响交付效率",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1932",
+    "reporter": "BlueBird",
+    "reporter_login": "BlueBird_2026",
+    "type": "enhancement",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "enhancement"
+    ],
+    "created_at": "2026-06-11T17:46:28+08:00",
+    "updated_at": "2026-06-11T17:46:28+08:00",
+    "comments": 0
+  },
+  {
+    "number": "1931",
+    "title": "[新需求]- 将现有Gitee上的补丁版本回合工具移植至Gitcode，同时提供批量导出未回合PR列表的能力",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1931",
+    "reporter": "BlueBird",
+    "reporter_login": "BlueBird_2026",
+    "type": "enhancement",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "enhancement"
+    ],
+    "created_at": "2026-06-11T16:23:33+08:00",
+    "updated_at": "2026-06-11T16:30:03+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1930",
+    "title": "[需求]【陈栋/李奎】- Gitcode的MR预合并功能不完善，对版本质量、研发效率有较大影响",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1930",
+    "reporter": "BlueBird",
+    "reporter_login": "BlueBird_2026",
+    "type": "enhancement",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "enhancement"
+    ],
+    "created_at": "2026-06-11T16:21:46+08:00",
+    "updated_at": "2026-06-11T16:25:08+08:00",
+    "comments": 0
+  },
+  {
+    "number": "1929",
+    "title": "[其他问题] [姚孝添] 自定义角色模式穿透",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1929",
+    "reporter": "姚小白",
+    "reporter_login": "yao-xiaobai",
+    "type": "question",
+    "communities": [
+      "MindSpore"
+    ],
+    "status_tags": [],
+    "labels": [
+      "MindSpore",
+      "question"
+    ],
+    "created_at": "2026-06-10T10:15:48+08:00",
+    "updated_at": "2026-06-11T16:21:31+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1928",
+    "title": "[新增 OpenAPI 反馈]- 代码检视意见支持跳转到文件改动页签中对应的代码检视意见",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1928",
+    "reporter": "YanZhaohong",
+    "reporter_login": "yanzhaohong",
+    "type": "enhancement",
+    "communities": [
+      "openlibing"
+    ],
+    "status_tags": [],
+    "labels": [
+      "enhancement",
+      "openlibing"
+    ],
+    "created_at": "2026-06-09T20:35:54+08:00",
+    "updated_at": "2026-06-11T16:26:54+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1927",
+    "title": "[新增 OpenAPI 反馈]- 期望提供插件的运营指标数据",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1927",
+    "reporter": "YanZhaohong",
+    "reporter_login": "yanzhaohong",
+    "type": "enhancement",
+    "communities": [
+      "openlibing"
+    ],
+    "status_tags": [],
+    "labels": [
+      "enhancement",
+      "openlibing"
+    ],
+    "created_at": "2026-06-09T20:33:00+08:00",
+    "updated_at": "2026-06-09T20:33:00+08:00",
+    "comments": 0
+  },
+  {
+    "number": "1926",
+    "title": "[其他问题] 【许广跃】openeuler/kernel仓库commit查看页面，搜索超时",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1926",
+    "reporter": "Guangyue-Xu",
+    "reporter_login": "Guangyue-Xu",
+    "type": "question",
+    "communities": [
+      "openEuler"
+    ],
+    "status_tags": [],
+    "labels": [
+      "openEuler",
+      "question"
+    ],
+    "created_at": "2026-06-09T20:29:15+08:00",
+    "updated_at": "2026-06-11T16:24:46+08:00",
+    "comments": 0
+  },
+  {
+    "number": "1925",
+    "title": "[新增 OpenAPI 反馈]- 希望gitcode CLI支持获取和回复代码检视意见",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1925",
+    "reporter": "YanZhaohong",
+    "reporter_login": "yanzhaohong",
+    "type": "enhancement",
+    "communities": [
+      "openlibing"
+    ],
+    "status_tags": [],
+    "labels": [
+      "enhancement",
+      "openlibing"
+    ],
+    "created_at": "2026-06-09T19:10:51+08:00",
+    "updated_at": "2026-06-11T16:29:12+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1924",
+    "title": "[新增 OpenAPI 反馈]- 每个仓库的issue支持设置默认的指定负责人",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1924",
+    "reporter": "HiS-CI",
+    "reporter_login": "HiS-CI",
+    "type": "enhancement",
+    "communities": [
+      "HiSpark"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "enhancement",
+      "HiSpark",
+      "待验收"
+    ],
+    "created_at": "2026-06-09T15:26:47+08:00",
+    "updated_at": "2026-06-10T19:30:13+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1923",
+    "title": "[其他问题] 毛聪聪】【计算】AI检视这块agent和模型解耦这块，有后续计划吗",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1923",
+    "reporter": "maocongcong",
+    "reporter_login": "maocongcong",
+    "type": "question",
+    "communities": [
+      "openlibing"
+    ],
+    "status_tags": [],
+    "labels": [
+      "openlibing",
+      "question"
+    ],
+    "created_at": "2026-06-09T11:58:33+08:00",
+    "updated_at": "2026-06-10T19:30:28+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1922",
+    "title": "[其他问题] 【毛聪聪】【计算】AI检视支持基于代码树解析的能力，什么时候支持",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1922",
+    "reporter": "maocongcong",
+    "reporter_login": "maocongcong",
+    "type": "question",
+    "communities": [
+      "openlibing"
+    ],
+    "status_tags": [],
+    "labels": [
+      "openlibing",
+      "question"
+    ],
+    "created_at": "2026-06-09T11:52:08+08:00",
+    "updated_at": "2026-06-09T13:52:28+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1921",
+    "title": "【Ascned】【曹晓林】获取流水线执行任务时排队数据",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1921",
+    "reporter": "caoxiaolin",
+    "reporter_login": "caoxiaolin",
+    "type": "enhancement",
+    "communities": [
+      "openlibing"
+    ],
+    "status_tags": [],
+    "labels": [
+      "enhancement",
+      "openlibing"
+    ],
+    "created_at": "2026-06-09T11:13:42+08:00",
+    "updated_at": "2026-06-10T18:09:32+08:00",
+    "comments": 0
+  },
+  {
+    "number": "1920",
+    "title": "[新增 OpenAPI 反馈]- 企业issue自定义字段修改",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1920",
+    "reporter": "l1azzzy",
+    "reporter_login": "l1azzzy",
+    "type": "enhancement",
+    "communities": [
+      "openGauss"
+    ],
+    "status_tags": [
+      "待排期"
+    ],
+    "labels": [
+      "enhancement",
+      "openGauss",
+      "待排期"
+    ],
+    "created_at": "2026-06-09T10:50:06+08:00",
+    "updated_at": "2026-06-10T18:09:08+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1919",
+    "title": "[其他问题] PR评论区承载许多功能导致评论区很乱",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1919",
+    "reporter": "liudongfang",
+    "reporter_login": "liudongfang",
+    "type": "question",
+    "communities": [
+      "openlibing"
+    ],
+    "status_tags": [],
+    "labels": [
+      "openlibing",
+      "question"
+    ],
+    "created_at": "2026-06-09T09:08:18+08:00",
+    "updated_at": "2026-06-10T19:34:24+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1918",
+    "title": "[新增 OpenAPI 反馈]- 获取PR评论接口缺少“代码检视意见是否已过期”字段",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1918",
+    "reporter": "YanZhaohong",
+    "reporter_login": "yanzhaohong",
+    "type": "bug",
+    "communities": [
+      "openlibing"
+    ],
+    "status_tags": [],
+    "labels": [
+      "bug",
+      "enhancement",
+      "openlibing"
+    ],
+    "created_at": "2026-06-08T21:40:38+08:00",
+    "updated_at": "2026-06-11T12:44:00+08:00",
+    "comments": 3
+  },
+  {
+    "number": "1917",
+    "title": "[需求][其他问题] [赵栩锋]gitcode代码化对接自定义k8s时需要能够直接分配智算资源",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1917",
+    "reporter": "zhaoxufeng",
+    "reporter_login": "zxf_0731",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [
+      "高优先级"
+    ],
+    "labels": [
+      "CANN",
+      "question",
+      "高优先级"
+    ],
+    "created_at": "2026-06-08T17:30:07+08:00",
+    "updated_at": "2026-06-10T18:08:01+08:00",
+    "comments": 0
+  },
+  {
+    "number": "1916",
+    "title": "[其他问题] 【奇亮】  GitCode 是 SPA 页面，无法直接抓取内容，是否可以增加对大模型的支持",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1916",
+    "reporter": "坚果",
+    "reporter_login": "jianguoxu",
+    "type": "question",
+    "communities": [
+      "OpenHarmony"
+    ],
+    "status_tags": [],
+    "labels": [
+      "OpenHarmony",
+      "question"
+    ],
+    "created_at": "2026-06-07T09:28:18+08:00",
+    "updated_at": "2026-06-08T18:59:52+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1915",
+    "title": "[其他问题] [CANN]企业PR列表或者组织PR列表接口支持仓库筛选和scope",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1915",
+    "reporter": "shentukangjun",
+    "reporter_login": "shentukangjun",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [],
+    "labels": [
+      "CANN",
+      "question"
+    ],
+    "created_at": "2026-06-05T10:23:08+08:00",
+    "updated_at": "2026-06-11T16:01:01+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1914",
+    "title": "【需求】【刘金生】希望gitcode action支持复合操作",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1914",
+    "reporter": "liujinsheng",
+    "reporter_login": "liujinsheng7",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "question"
+    ],
+    "created_at": "2026-06-05T09:57:48+08:00",
+    "updated_at": "2026-06-11T16:19:35+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1913",
+    "title": "[其他问题] GitCode平台Diff文件多时，页面加载卡顿",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1913",
+    "reporter": "姚小白",
+    "reporter_login": "yao-xiaobai",
+    "type": "question",
+    "communities": [
+      "openEuler"
+    ],
+    "status_tags": [],
+    "labels": [
+      "openEuler",
+      "question"
+    ],
+    "created_at": "2026-06-05T08:57:52+08:00",
+    "updated_at": "2026-06-05T08:57:52+08:00",
+    "comments": 0
+  },
+  {
+    "number": "1911",
+    "title": "[其他问题] [CANN] https://gitcode.com/cann需要获取组织首页的UV信息，当前没有对应的接口",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1911",
+    "reporter": "shentukangjun",
+    "reporter_login": "shentukangjun",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [],
+    "labels": [
+      "CANN",
+      "question"
+    ],
+    "created_at": "2026-06-03T14:19:58+08:00",
+    "updated_at": "2026-06-05T13:42:15+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1910",
+    "title": "【需求】长时间未合并的PR通知创建人（邮件/站内信）",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1910",
+    "reporter": "吴志文",
+    "reporter_login": "ozvale",
+    "type": "enhancement",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "enhancement",
+      "question"
+    ],
+    "created_at": "2026-06-02T17:25:17+08:00",
+    "updated_at": "2026-06-08T14:30:42+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1908",
+    "title": "[其他问题] [CANN] 希望issue列表中的负责人支持多选",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1908",
+    "reporter": "shentukangjun",
+    "reporter_login": "shentukangjun",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [],
+    "labels": [
+      "CANN",
+      "question"
+    ],
+    "created_at": "2026-06-02T15:51:47+08:00",
+    "updated_at": "2026-06-04T21:47:03+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1907",
+    "title": "【需求】【吴志文】希望gitcode默认资源池提供外网执行机如香港、新加披",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1907",
+    "reporter": "吴志文",
+    "reporter_login": "ozvale",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "question"
+    ],
+    "created_at": "2026-06-02T11:16:33+08:00",
+    "updated_at": "2026-06-11T15:45:47+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1905",
+    "title": "【需求】【刘金伟】希望gitcode评论区可以逆序，即按最新时间排序展",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1905",
+    "reporter": "hwliujinwei",
+    "reporter_login": "hwliujinwei",
+    "type": "enhancement",
+    "communities": [
+      "OpenHarmony"
+    ],
+    "status_tags": [],
+    "labels": [
+      "enhancement",
+      "OpenHarmony"
+    ],
+    "created_at": "2026-06-01T16:03:44+08:00",
+    "updated_at": "2026-06-04T16:18:42+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1904",
+    "title": "[新增 OpenAPI 反馈]- 【秦壮壮】希望开放一个Pull Requests设置里面的修改流水线运行状态的接口，这样自定义的流水线也可以控制门禁",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1904",
+    "reporter": "qinzhuangzhuang",
+    "reporter_login": "qinzhuangzhuang",
+    "type": "enhancement",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "enhancement"
+    ],
+    "created_at": "2026-06-01T15:51:51+08:00",
+    "updated_at": "2026-06-03T13:40:44+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1903",
+    "title": "[其他问题] 【秦壮壮】提交pr的时候希望可以和gitee一样：支持gitee保护分支的评审模式！",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1903",
+    "reporter": "qinzhuangzhuang",
+    "reporter_login": "qinzhuangzhuang",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-06-01T15:46:23+08:00",
+    "updated_at": "2026-06-04T15:56:04+08:00",
+    "comments": 6
+  },
+  {
+    "number": "1902",
+    "title": "[其他问题] [姚孝添]  用户希望勾选的issue放在最前面",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1902",
+    "reporter": "姚小白",
+    "reporter_login": "yao-xiaobai",
+    "type": "question",
+    "communities": [
+      "openEuler"
+    ],
+    "status_tags": [],
+    "labels": [
+      "openEuler",
+      "question"
+    ],
+    "created_at": "2026-06-01T15:35:45+08:00",
+    "updated_at": "2026-06-11T15:11:06+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1901",
+    "title": "[其他问题] [姚孝添] v1 post接口waf限制频率问题",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1901",
+    "reporter": "姚小白",
+    "reporter_login": "yao-xiaobai",
+    "type": "question",
+    "communities": [
+      "openEuler"
+    ],
+    "status_tags": [],
+    "labels": [
+      "openEuler",
+      "question"
+    ],
+    "created_at": "2026-06-01T14:57:39+08:00",
+    "updated_at": "2026-06-01T15:00:32+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1900",
+    "title": "【Ascend】【曹晓林】提供流水线任务上传artifacts后相关接口",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1900",
+    "reporter": "caoxiaolin",
+    "reporter_login": "caoxiaolin",
+    "type": "enhancement",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "Ascend",
+      "enhancement",
+      "待验收"
+    ],
+    "created_at": "2026-06-01T14:45:42+08:00",
+    "updated_at": "2026-06-11T15:36:07+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1899",
+    "title": "【Ascend】【曹晓林】提供代码仓runner配置详情接口",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1899",
+    "reporter": "caoxiaolin",
+    "reporter_login": "caoxiaolin",
+    "type": "enhancement",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "enhancement"
+    ],
+    "created_at": "2026-06-01T14:39:38+08:00",
+    "updated_at": "2026-06-01T16:26:14+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1898",
+    "title": "【CANN】【潘靖】给下载明细接口添加过滤条件",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1898",
+    "reporter": "pan_dev11323",
+    "reporter_login": "qq_38132381",
+    "type": "enhancement",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "CANN",
+      "enhancement",
+      "待验收"
+    ],
+    "created_at": "2026-06-01T12:06:26+08:00",
+    "updated_at": "2026-06-04T09:31:55+08:00",
+    "comments": 4
+  },
+  {
+    "number": "1897",
+    "title": "【Ascend】【曹晓林】提供流水线任务日志查询和下载接口",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1897",
+    "reporter": "caoxiaolin",
+    "reporter_login": "caoxiaolin",
+    "type": "enhancement",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "Ascend",
+      "enhancement",
+      "待验收"
+    ],
+    "created_at": "2026-06-01T09:46:34+08:00",
+    "updated_at": "2026-06-02T09:07:57+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1896",
+    "title": "【Ascend】【曹晓林】流水线执行任务资源消耗数据获取",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1896",
+    "reporter": "caoxiaolin",
+    "reporter_login": "caoxiaolin",
+    "type": "enhancement",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "enhancement"
+    ],
+    "created_at": "2026-05-31T18:35:31+08:00",
+    "updated_at": "2026-06-01T20:02:38+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1895",
+    "title": "[其他问题] 在昇腾社区提交issue时，200多k的图片都无法上传，不方便贴图只能传附件",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1895",
+    "reporter": "livefornow9",
+    "reporter_login": "livefornow9",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "Ascend",
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-05-30T09:18:15+08:00",
+    "updated_at": "2026-06-01T16:25:37+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1893",
+    "title": "[新增 OpenAPI 反馈]-【毛聪聪】【曹晓林】【计算】 能否提供接口获取代码仓是否支持代码检视",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1893",
+    "reporter": "maocongcong",
+    "reporter_login": "maocongcong",
+    "type": "enhancement",
+    "communities": [
+      "openlibing"
+    ],
+    "status_tags": [],
+    "labels": [
+      "enhancement",
+      "openlibing"
+    ],
+    "created_at": "2026-05-28T16:33:54+08:00",
+    "updated_at": "2026-06-08T16:16:24+08:00",
+    "comments": 4
+  },
+  {
+    "number": "1892",
+    "title": "[其他问题] 输出compile触发流水线，再通过api重新触发流水线，check页面显示任务失败，任务与实际ｐｒ执行任务不一致",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1892",
+    "reporter": "黄桂军",
+    "reporter_login": "stevenaw0",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "question"
+    ],
+    "created_at": "2026-05-28T16:31:36+08:00",
+    "updated_at": "2026-06-11T14:54:44+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1891",
+    "title": "[其他问题] 触发流水线后，３分钟后在check页面还看不到流水线记录",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1891",
+    "reporter": "黄桂军",
+    "reporter_login": "stevenaw0",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "question"
+    ],
+    "created_at": "2026-05-28T10:10:17+08:00",
+    "updated_at": "2026-06-08T09:56:58+08:00",
+    "comments": 3
+  },
+  {
+    "number": "1890",
+    "title": "[新增 OpenAPI 反馈]- 【毛聪聪】【马越】【计算】gitcode AI检视能否接入业务提供的skill，用于增强检视能力",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1890",
+    "reporter": "maocongcong",
+    "reporter_login": "maocongcong",
+    "type": "enhancement",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "enhancement"
+    ],
+    "created_at": "2026-05-27T16:14:50+08:00",
+    "updated_at": "2026-06-01T15:33:33+08:00",
+    "comments": 5
+  },
+  {
+    "number": "1889",
+    "title": "[其他问题] [yxt] md渲染支持",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1889",
+    "reporter": "姚小白",
+    "reporter_login": "yao-xiaobai",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [],
+    "labels": [
+      "CANN",
+      "question"
+    ],
+    "created_at": "2026-05-27T14:16:24+08:00",
+    "updated_at": "2026-05-29T17:16:42+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1888",
+    "title": "[其他问题] CANN- lable按照仓库的维度管理，部分label可以只在个别仓库可见",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1888",
+    "reporter": "songchangxia",
+    "reporter_login": "songchangxia",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-05-26T14:32:45+08:00",
+    "updated_at": "2026-05-27T09:17:25+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1886",
+    "title": "[其他问题] 【毛聪聪】【牛诗雅】【计算】部分仓命令触发AI检视还是一直失败",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1886",
+    "reporter": "maocongcong",
+    "reporter_login": "maocongcong",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "question"
+    ],
+    "created_at": "2026-05-25T20:12:24+08:00",
+    "updated_at": "2026-06-08T16:14:52+08:00",
+    "comments": 4
+  },
+  {
+    "number": "1885",
+    "title": "[其他问题] 【毛聪聪】【计算】gitcode AI检视 企业版具体方案和上线日期",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1885",
+    "reporter": "maocongcong",
+    "reporter_login": "maocongcong",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-05-25T14:28:07+08:00",
+    "updated_at": "2026-05-29T09:19:26+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1884",
+    "title": "鸿蒙pc【黄琦】 AI支持",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1884",
+    "reporter": "坚果",
+    "reporter_login": "jianguoxu",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-05-25T13:44:12+08:00",
+    "updated_at": "2026-05-27T06:23:21+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1883",
+    "title": "鸿蒙PC【黄琦】，非组织管理员，打开仓库无fork功能，刷新多次，出现fork按钮。",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1883",
+    "reporter": "坚果",
+    "reporter_login": "jianguoxu",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-05-25T13:41:26+08:00",
+    "updated_at": "2026-05-26T13:52:23+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1882",
+    "title": "[新增 OpenAPI 反馈]- 【毛聪聪】【吴龙飞】【计算】新增分析pr的代码中有没有和关联的issue无关的代码的功能",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1882",
+    "reporter": "maocongcong",
+    "reporter_login": "maocongcong",
+    "type": "enhancement",
+    "communities": [
+      "openGauss"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "enhancement",
+      "openGauss",
+      "待验收"
+    ],
+    "created_at": "2026-05-22T11:00:01+08:00",
+    "updated_at": "2026-06-01T14:45:00+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1878",
+    "title": "[新增 OpenAPI 反馈]- 查询流水线执行结果详情",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1878",
+    "reporter": "Ethan",
+    "reporter_login": "xx_hao",
+    "type": "enhancement",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "CANN",
+      "enhancement",
+      "待验收"
+    ],
+    "created_at": "2026-05-21T13:12:37+08:00",
+    "updated_at": "2026-06-05T13:56:24+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1877",
+    "title": "[新增 OpenAPI 反馈]-【毛聪聪】【计算】 有什么便捷的方式判断 PR被AI review过",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1877",
+    "reporter": "maocongcong",
+    "reporter_login": "maocongcong",
+    "type": "enhancement",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "enhancement"
+    ],
+    "created_at": "2026-05-21T09:59:30+08:00",
+    "updated_at": "2026-06-05T16:51:32+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1876",
+    "title": "[新增 OpenAPI 反馈]- 代码审查设置添加审查人时用用户名无法正常添加",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1876",
+    "reporter": "HiS-CI",
+    "reporter_login": "HiS-CI",
+    "type": "enhancement",
+    "communities": [
+      "HiSpark"
+    ],
+    "status_tags": [],
+    "labels": [
+      "enhancement",
+      "HiSpark"
+    ],
+    "created_at": "2026-05-20T19:56:11+08:00",
+    "updated_at": "2026-06-05T15:07:54+08:00",
+    "comments": 0
+  },
+  {
+    "number": "1875",
+    "title": "【需求】【刘金生】【计算】希望gitcode上workflow流水线提供对外API，便于后续工具自动化调用",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1875",
+    "reporter": "liujinsheng",
+    "reporter_login": "liujinsheng7",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-05-20T19:19:13+08:00",
+    "updated_at": "2026-06-05T13:55:38+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1871",
+    "title": "[需求] 【吕昂】codeowner未全部通过时，  建议和 审查人一样带有进行中的标签",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1871",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-05-20T10:07:50+08:00",
+    "updated_at": "2026-05-20T15:39:40+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1869",
+    "title": "【鸿蒙PC需求】黄琦 对标github，支持“Allow edits by maintainers”",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1869",
+    "reporter": "坚果",
+    "reporter_login": "jianguoxu",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-05-19T15:20:30+08:00",
+    "updated_at": "2026-05-19T15:22:30+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1868",
+    "title": "[其他问题] 【姚孝添】issue模板的目录希望支持 .atomgit",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1868",
+    "reporter": "姚小白",
+    "reporter_login": "yao-xiaobai",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-05-19T15:03:21+08:00",
+    "updated_at": "2026-05-20T16:16:40+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1867",
+    "title": "[需求]【杜泉松】【计算】提供自定义prompt的能力，便于针对非通用场景的代码问题进行检查",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1867",
+    "reporter": "kent-ado",
+    "reporter_login": "kentado",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "Ascend",
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-05-19T12:03:01+08:00",
+    "updated_at": "2026-05-29T16:35:46+08:00",
+    "comments": 4
+  },
+  {
+    "number": "1865",
+    "title": "[其他问题] 对标gitee，新增代码搜索页面，对标业界先进工具，提升搜索易用性提升",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1865",
+    "reporter": "王海涛",
+    "reporter_login": "haimbb000",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-05-19T09:43:41+08:00",
+    "updated_at": "2026-05-19T09:43:41+08:00",
+    "comments": 0
+  },
+  {
+    "number": "1863",
+    "title": "[其他问题] 【CANN】【易用性】需要登录才下载CANN代码，外部开发者抱怨易用性，且发现登录推送谷歌TPU广告",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1863",
+    "reporter": "王海涛",
+    "reporter_login": "haimbb000",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "cann",
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-05-18T19:33:52+08:00",
+    "updated_at": "2026-05-22T12:55:27+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1862",
+    "title": "[体验问题] [Ascend社区] PR评论区内容过多，期望可以只关注重点信息",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1862",
+    "reporter": "吴志文",
+    "reporter_login": "ozvale",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "Ascend",
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-05-18T19:28:38+08:00",
+    "updated_at": "2026-05-27T14:04:26+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1860",
+    "title": "[其他问题] CANN 【AtomGit机器人】ai review检视未基于新目录新文件，导致误报",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1860",
+    "reporter": "songchangxia",
+    "reporter_login": "songchangxia",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "CANN",
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-05-15T18:34:37+08:00",
+    "updated_at": "2026-05-19T19:39:29+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1859",
+    "title": "[需求]- 希望gitcode可以提供类似github的APP授权模式",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1859",
+    "reporter": "吴志文",
+    "reporter_login": "ozvale",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [
+      "已拒绝"
+    ],
+    "labels": [
+      "Ascend",
+      "question",
+      "已拒绝"
+    ],
+    "created_at": "2026-05-15T17:25:18+08:00",
+    "updated_at": "2026-05-22T12:52:22+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1856",
+    "title": "[新增 OpenAPI 反馈]- 【毛聪聪】【计算】目前需要手动触发检视，期望可以作为流水线门禁，自动执行",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1856",
+    "reporter": "maocongcong",
+    "reporter_login": "maocongcong",
+    "type": "enhancement",
+    "communities": [
+      "openlibing"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "enhancement",
+      "openlibing",
+      "待验收"
+    ],
+    "created_at": "2026-05-15T11:11:10+08:00",
+    "updated_at": "2026-06-08T16:26:22+08:00",
+    "comments": 4
+  },
+  {
+    "number": "1855",
+    "title": "[新增 OpenAPI 反馈]- 【毛聪聪】【计算】检出问题较多时，能否支持将问题分类展示，当前有点细碎",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1855",
+    "reporter": "maocongcong",
+    "reporter_login": "maocongcong",
+    "type": "enhancement",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "enhancement"
+    ],
+    "created_at": "2026-05-15T11:10:22+08:00",
+    "updated_at": "2026-05-15T16:06:53+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1853",
+    "title": "[新增 OpenAPI 反馈]- 【毛聪聪】【计算】AI检视需要支持格式和代码规范检视",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1853",
+    "reporter": "maocongcong",
+    "reporter_login": "maocongcong",
+    "type": "enhancement",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "enhancement",
+      "待验收"
+    ],
+    "created_at": "2026-05-15T11:09:07+08:00",
+    "updated_at": "2026-06-08T16:13:46+08:00",
+    "comments": 7
+  },
+  {
+    "number": "1844",
+    "title": "[其他问题]-代码评审意见如何指定必须由谁来点已解决？",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1844",
+    "reporter": "吴志文",
+    "reporter_login": "ozvale",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-05-14T22:03:59+08:00",
+    "updated_at": "2026-06-09T10:30:19+08:00",
+    "comments": 5
+  },
+  {
+    "number": "1843",
+    "title": "[需求]-希望可以实现类似github的Security and quality安全与质量模块",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1843",
+    "reporter": "吴志文",
+    "reporter_login": "ozvale",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "question"
+    ],
+    "created_at": "2026-05-14T21:27:18+08:00",
+    "updated_at": "2026-05-19T21:14:13+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1842",
+    "title": "[其他问题] 【赵丹荣】Open API支持企业label相关接口(增删改查)",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1842",
+    "reporter": "吕一明",
+    "reporter_login": "lvyiming01",
+    "type": "question",
+    "communities": [
+      "Cangjie"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Cangjie",
+      "question"
+    ],
+    "created_at": "2026-05-14T17:17:54+08:00",
+    "updated_at": "2026-05-14T17:20:34+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1841",
+    "title": "[新增 OpenAPI 反馈]- 【计算】【毛聪聪】针对AI检视意见能否单独控制是否解决才能合入",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1841",
+    "reporter": "maocongcong",
+    "reporter_login": "maocongcong",
+    "type": "enhancement",
+    "communities": [
+      "openlibing"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "enhancement",
+      "openlibing",
+      "待验收"
+    ],
+    "created_at": "2026-05-14T15:03:20+08:00",
+    "updated_at": "2026-05-27T10:38:26+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1840",
+    "title": "[新增 OpenAPI 反馈]- CANN 宋常霞  提供获取discussion的API以及gitcode人员名称历史信息的接口",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1840",
+    "reporter": "songchangxia",
+    "reporter_login": "songchangxia",
+    "type": "enhancement",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "CANN",
+      "enhancement",
+      "待验收"
+    ],
+    "created_at": "2026-05-13T18:49:43+08:00",
+    "updated_at": "2026-05-22T13:54:19+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1838",
+    "title": "[OpenAPI 错误] https://api.gitcode.com/api/v5/repos/cann/ge/pulls/2716/files",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1838",
+    "reporter": "rusiwillbeok",
+    "reporter_login": "rusiwillbeok",
+    "type": "bug",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [],
+    "labels": [
+      "bug",
+      "CANN"
+    ],
+    "created_at": "2026-05-13T14:46:25+08:00",
+    "updated_at": "2026-05-14T14:38:11+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1837",
+    "title": "[其他问题] 【黄桂军】讨论页面，标题中无法添加空格；标题允许长度短；正文允许字数少",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1837",
+    "reporter": "黄桂军",
+    "reporter_login": "stevenaw0",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "CANN",
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-05-13T10:35:38+08:00",
+    "updated_at": "2026-05-19T20:45:16+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1834",
+    "title": "[其他问题] 【黄桂军】检查页面，任务多了之后看不清楚",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1834",
+    "reporter": "黄桂军",
+    "reporter_login": "stevenaw0",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [],
+    "labels": [
+      "cann",
+      "CANN",
+      "question"
+    ],
+    "created_at": "2026-05-11T10:51:53+08:00",
+    "updated_at": "2026-05-14T17:13:16+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1829",
+    "title": "【Ascend】【曹晓林】流水线代码化问题-job任务日志缺少环境运行runner记录",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1829",
+    "reporter": "caoxiaolin",
+    "reporter_login": "caoxiaolin",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "question"
+    ],
+    "created_at": "2026-05-08T15:51:44+08:00",
+    "updated_at": "2026-05-14T16:41:51+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1826",
+    "title": "[其他问题]【宋常霞】 CANN社区，PR内的已过期的检视意见，不应该作为代码合入的拦截条件，应该不作为统计条件",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1826",
+    "reporter": "songchangxia",
+    "reporter_login": "songchangxia",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "CANN",
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-05-07T22:13:49+08:00",
+    "updated_at": "2026-05-15T14:22:07+08:00",
+    "comments": 3
+  },
+  {
+    "number": "1823",
+    "title": "[新增 OpenAPI 反馈]- 【计算：毛聪聪，刘波】Gitcode集成第三方 AI 代码评审服务接入与结果可视化展示",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1823",
+    "reporter": "maocongcong",
+    "reporter_login": "maocongcong",
+    "type": "enhancement",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [
+      "长期演进"
+    ],
+    "labels": [
+      "enhancement",
+      "长期演进"
+    ],
+    "created_at": "2026-05-07T17:12:07+08:00",
+    "updated_at": "2026-05-14T17:05:13+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1822",
+    "title": "[新增 OpenAPI 反馈]- 【计算：毛聪聪，刘波】Gitcode AI 代码检视能力优化：实现与 GitHub Copilot/Gemini 体验对齐及评测体系构建",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1822",
+    "reporter": "maocongcong",
+    "reporter_login": "maocongcong",
+    "type": "enhancement",
+    "communities": [
+      "openlibing"
+    ],
+    "status_tags": [],
+    "labels": [
+      "enhancement",
+      "openlibing"
+    ],
+    "created_at": "2026-05-07T17:09:38+08:00",
+    "updated_at": "2026-05-19T21:30:16+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1821",
+    "title": "[其他问题] 【敖雪娇】CANN组织群组讨论功能优化",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1821",
+    "reporter": "A-CAN-0910",
+    "reporter_login": "A-CAN-0910",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [],
+    "labels": [
+      "CANN",
+      "question"
+    ],
+    "created_at": "2026-05-07T14:06:14+08:00",
+    "updated_at": "2026-05-07T14:13:51+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1815",
+    "title": "[其他问题] 【问题】【田闪】OH企业issue里程碑筛选6.1release时有多个选项",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1815",
+    "reporter": "tian-shanddd",
+    "reporter_login": "tian-shanddd",
+    "type": "question",
+    "communities": [
+      "OpenHarmony"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "OpenHarmony",
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-04-30T17:06:22+08:00",
+    "updated_at": "2026-05-18T11:25:51+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1814",
+    "title": "[新增 OpenAPI 反馈]- 仓库镜像同步问题",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1814",
+    "reporter": "HiS-CI",
+    "reporter_login": "HiS-CI",
+    "type": "enhancement",
+    "communities": [
+      "HiSpark"
+    ],
+    "status_tags": [],
+    "labels": [
+      "enhancement",
+      "HiSpark"
+    ],
+    "created_at": "2026-04-30T14:19:24+08:00",
+    "updated_at": "2026-05-29T13:56:12+08:00",
+    "comments": 5
+  },
+  {
+    "number": "1812",
+    "title": "[Ascend需求]【毛聪聪】 AI辅助——代码agent能力内嵌到gitcode流水线",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1812",
+    "reporter": "zhangyongchao",
+    "reporter_login": "gaven526",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-04-30T10:36:05+08:00",
+    "updated_at": "2026-05-06T09:34:50+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1809",
+    "title": "[新增 OpenAPI 反馈]- 【毛聪聪】是否能支持第三方检视工具接入",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1809",
+    "reporter": "maocongcong",
+    "reporter_login": "maocongcong",
+    "type": "enhancement",
+    "communities": [
+      "openlibing"
+    ],
+    "status_tags": [],
+    "labels": [
+      "enhancement",
+      "openlibing"
+    ],
+    "created_at": "2026-04-29T20:21:15+08:00",
+    "updated_at": "2026-05-14T14:50:58+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1808",
+    "title": "[新增 OpenAPI 反馈]- 组织下成员邀请日志信息中邀请成员和实际邀请成员不一致",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1808",
+    "reporter": "HiS-CI",
+    "reporter_login": "HiS-CI",
+    "type": "enhancement",
+    "communities": [
+      "HiSpark"
+    ],
+    "status_tags": [],
+    "labels": [
+      "enhancement",
+      "HiSpark"
+    ],
+    "created_at": "2026-04-29T15:57:11+08:00",
+    "updated_at": "2026-05-15T11:51:19+08:00",
+    "comments": 3
+  },
+  {
+    "number": "1806",
+    "title": "[Ascend需求] 【毛聪聪】 - 针对问题PR/全量CI失败用例，希望GitCode提供AI Agent的自动化分析能力",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1806",
+    "reporter": "lujinxing",
+    "reporter_login": "lujinxing",
+    "type": "enhancement",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "Ascend",
+      "enhancement",
+      "待验收"
+    ],
+    "created_at": "2026-04-29T14:09:43+08:00",
+    "updated_at": "2026-06-01T15:47:38+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1805",
+    "title": "[Ascend需求]【毛聪聪】 AI辅助能力：开发者社区智能化作业流，AI端到端辅助：智能化日志分析、插件开发智能化、PAC配置智能生成（待细化对齐）",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1805",
+    "reporter": "zhangyongchao",
+    "reporter_login": "gaven526",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "question"
+    ],
+    "created_at": "2026-04-29T10:23:15+08:00",
+    "updated_at": "2026-04-30T11:28:27+08:00",
+    "comments": 0
+  },
+  {
+    "number": "1803",
+    "title": "[其他问题] [竞赛平台]需要支持初赛代码合入、决赛代码合入，并把初赛合入的功能作为可配置的选项",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1803",
+    "reporter": "jackwangc",
+    "reporter_login": "jackwangc",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [],
+    "labels": [
+      "CANN",
+      "question"
+    ],
+    "created_at": "2026-04-28T22:38:47+08:00",
+    "updated_at": "2026-04-29T18:00:27+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1802",
+    "title": "[其他问题] [竞赛平台] 需要支持参赛选手一键提交 PR 到指定竞赛代码仓",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1802",
+    "reporter": "jackwangc",
+    "reporter_login": "jackwangc",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [],
+    "labels": [
+      "CANN",
+      "question"
+    ],
+    "created_at": "2026-04-28T20:53:10+08:00",
+    "updated_at": "2026-04-30T11:15:42+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1800",
+    "title": "[其他问题] check 具体任务日志，首先加载文档最后一段，因为报错在文档最后面",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1800",
+    "reporter": "黄桂军",
+    "reporter_login": "stevenaw0",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [],
+    "labels": [
+      "cann",
+      "CANN",
+      "question"
+    ],
+    "created_at": "2026-04-28T16:12:38+08:00",
+    "updated_at": "2026-05-08T14:07:54+08:00",
+    "comments": 6
+  },
+  {
+    "number": "1799",
+    "title": "[流水线] 【CANN】流水线需求汇总",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1799",
+    "reporter": "吕一明",
+    "reporter_login": "lvyiming01",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [],
+    "labels": [
+      "CANN",
+      "question"
+    ],
+    "created_at": "2026-04-28T09:56:41+08:00",
+    "updated_at": "2026-04-28T09:57:26+08:00",
+    "comments": 0
+  },
+  {
+    "number": "1798",
+    "title": "[新增 OpenAPI 反馈]- [GitCode Skillhub] 希望Gticode可以提供官方的skill运营平台，",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1798",
+    "reporter": "lujinxing",
+    "reporter_login": "lujinxing",
+    "type": "enhancement",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "enhancement"
+    ],
+    "created_at": "2026-04-27T17:29:47+08:00",
+    "updated_at": "2026-06-01T15:47:54+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1797",
+    "title": "[新增 OpenAPI 反馈]- 希望支持通过自然语言描述来让机器人执行创建issue, cherry-pick这些操作",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1797",
+    "reporter": "lujinxing",
+    "reporter_login": "lujinxing",
+    "type": "enhancement",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "Ascend",
+      "enhancement",
+      "待验收"
+    ],
+    "created_at": "2026-04-27T17:22:45+08:00",
+    "updated_at": "2026-05-15T23:01:32+08:00",
+    "comments": 3
+  },
+  {
+    "number": "1796",
+    "title": "【Ascend】【曹晓林】[功能咨询] issue可见性设置成私密后，哪些角色或成员可以查看",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1796",
+    "reporter": "caoxiaolin",
+    "reporter_login": "caoxiaolin",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "Ascend",
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-04-25T15:45:48+08:00",
+    "updated_at": "2026-05-07T09:53:07+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1793",
+    "title": "[Ascend需求]【吴志文】代码仓项目成员邀请时不需要对方同意，参考github",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1793",
+    "reporter": "吴志文",
+    "reporter_login": "ozvale",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "question"
+    ],
+    "created_at": "2026-04-23T21:20:52+08:00",
+    "updated_at": "2026-05-13T16:45:56+08:00",
+    "comments": 9
+  },
+  {
+    "number": "1791",
+    "title": "[Ascend需求]【吴志文】 代码仓支持集成CodeQL安全扫描工具，对齐github体验",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1791",
+    "reporter": "吴志文",
+    "reporter_login": "ozvale",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "question"
+    ],
+    "created_at": "2026-04-22T21:49:21+08:00",
+    "updated_at": "2026-04-28T17:49:57+08:00",
+    "comments": 5
+  },
+  {
+    "number": "1790",
+    "title": "[Ascend需求]【吴志文】 流水线详情支持自定义结果报告，对齐github体验（job-summary）",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1790",
+    "reporter": "吴志文",
+    "reporter_login": "ozvale",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "question"
+    ],
+    "created_at": "2026-04-22T20:49:15+08:00",
+    "updated_at": "2026-04-28T17:50:26+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1789",
+    "title": "[Ascend需求]【吴志文】 PR评论区最后一条始终为检查项汇总，对齐github体验",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1789",
+    "reporter": "吴志文",
+    "reporter_login": "ozvale",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "question"
+    ],
+    "created_at": "2026-04-22T20:45:58+08:00",
+    "updated_at": "2026-05-13T13:35:29+08:00",
+    "comments": 3
+  },
+  {
+    "number": "1786",
+    "title": "[Ascend需求]【曹晓林/张永超】 gitcode-获取仓库所有 issues接口返回已删除issue数据，并标记好状态",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1786",
+    "reporter": "zhangyongchao",
+    "reporter_login": "gaven526",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "question"
+    ],
+    "created_at": "2026-04-22T16:17:10+08:00",
+    "updated_at": "2026-04-29T11:28:15+08:00",
+    "comments": 6
+  },
+  {
+    "number": "1784",
+    "title": "【CANN】（彭永荣&&王海涛）大模型/Agent工具定向搜索gitcode下cann-sample等仓库，显示找不到",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1784",
+    "reporter": "pengyongrong@huawei",
+    "reporter_login": "weixin_40382270",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "CANN",
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-04-21T20:57:49+08:00",
+    "updated_at": "2026-06-05T10:11:17+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1783",
+    "title": "【CANN】（彭永荣&&王海涛）通过函数名搜索代码，GitCode无结果，Github显示文件和相关代码（O1客户反馈）",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1783",
+    "reporter": "pengyongrong@huawei",
+    "reporter_login": "weixin_40382270",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "CANN",
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-04-21T20:52:06+08:00",
+    "updated_at": "2026-05-19T18:11:02+08:00",
+    "comments": 3
+  },
+  {
+    "number": "1782",
+    "title": "【CANN】（彭永荣&&王海涛）站外搜索存在搜不准、导向Gitee、排序不合理信息过时问题。",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1782",
+    "reporter": "pengyongrong@huawei",
+    "reporter_login": "weixin_40382270",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "CANN",
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-04-21T20:49:03+08:00",
+    "updated_at": "2026-06-05T10:11:02+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1780",
+    "title": "[新增 OpenAPI 反馈]- 代码不能正常合入，点击合入的时候提示CLA check failed",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1780",
+    "reporter": "HiS-CI",
+    "reporter_login": "HiS-CI",
+    "type": "enhancement",
+    "communities": [
+      "HiSpark"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "enhancement",
+      "HiSpark",
+      "待验收"
+    ],
+    "created_at": "2026-04-21T08:19:43+08:00",
+    "updated_at": "2026-05-19T21:02:06+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1778",
+    "title": "[其他问题] 【张祥威】gitcode怎么无法跳转到检视意见",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1778",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "OpenHarmony"
+    ],
+    "status_tags": [],
+    "labels": [
+      "OpenHarmony",
+      "question"
+    ],
+    "created_at": "2026-04-20T11:51:26+08:00",
+    "updated_at": "2026-04-21T16:02:00+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1777",
+    "title": "[李奎] 希望gitcode增加issue消息通知指定责任人能力",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1777",
+    "reporter": "BlueBird",
+    "reporter_login": "BlueBird_2026",
+    "type": "other",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "Ascend",
+      "待验收"
+    ],
+    "created_at": "2026-04-17T15:03:10+08:00",
+    "updated_at": "2026-04-22T09:29:55+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1776",
+    "title": "[李奎] github上可以直接通过@一下，直接进行代码检视，希望gitcode也能够看齐github的能力",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1776",
+    "reporter": "BlueBird",
+    "reporter_login": "BlueBird_2026",
+    "type": "other",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "Ascend",
+      "待验收"
+    ],
+    "created_at": "2026-04-17T15:00:43+08:00",
+    "updated_at": "2026-04-22T09:30:21+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1775",
+    "title": "[openapi] 【卫腾飞】openapi支持强制合入",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1775",
+    "reporter": "吕一明",
+    "reporter_login": "lvyiming01",
+    "type": "question",
+    "communities": [
+      "OpenHarmony"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "OpenHarmony",
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-04-17T14:40:49+08:00",
+    "updated_at": "2026-05-07T09:53:03+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1774",
+    "title": "[需求] [刘克盛] [CANN] 各开源仓添加一个 可配置 的提醒",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1774",
+    "reporter": "CANN社区小助手",
+    "reporter_login": "liuks",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [],
+    "labels": [
+      "CANN",
+      "question"
+    ],
+    "created_at": "2026-04-17T11:59:30+08:00",
+    "updated_at": "2026-04-22T16:01:02+08:00",
+    "comments": 3
+  },
+  {
+    "number": "1773",
+    "title": "[其他问题] [刘二萌] gitcode流水线增加流水线重跑功能",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1773",
+    "reporter": "dumb",
+    "reporter_login": "dumb",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-04-15T17:21:25+08:00",
+    "updated_at": "2026-04-20T16:30:29+08:00",
+    "comments": 3
+  },
+  {
+    "number": "1772",
+    "title": "[咨询问题] 【葛昶】https://api.atomgit.com/api/v5/repos/openharmony/pulls/related_review_data 为何会返回空",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1772",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-04-15T15:12:49+08:00",
+    "updated_at": "2026-05-18T11:45:42+08:00",
+    "comments": 8
+  },
+  {
+    "number": "1770",
+    "title": "[需求]  【姚孝添】 用户希望release包支持sha256校验码",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1770",
+    "reporter": "姚小白",
+    "reporter_login": "yao-xiaobai",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "question"
+    ],
+    "created_at": "2026-04-14T10:27:48+08:00",
+    "updated_at": "2026-05-22T13:58:39+08:00",
+    "comments": 3
+  },
+  {
+    "number": "1769",
+    "title": "[其他问题] [CANN] issue的标题中不可以使用空格么？",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1769",
+    "reporter": "songchangxia",
+    "reporter_login": "songchangxia",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "CANN",
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-04-13T21:18:32+08:00",
+    "updated_at": "2026-05-07T09:53:16+08:00",
+    "comments": 3
+  },
+  {
+    "number": "1768",
+    "title": "[其他问题] [宋常霞] CANN社区的tag的源码压缩包，通过wget获取之后，无法解压",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1768",
+    "reporter": "songchangxia",
+    "reporter_login": "songchangxia",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "CANN",
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-04-11T15:19:49+08:00",
+    "updated_at": "2026-05-07T09:53:02+08:00",
+    "comments": 3
+  },
+  {
+    "number": "1765",
+    "title": "[使用反馈]- 已合并的PR在已合并PR列表界面看不见PR的创建者信息",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1765",
+    "reporter": "HiS-CI",
+    "reporter_login": "HiS-CI",
+    "type": "enhancement",
+    "communities": [
+      "HiSpark"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "enhancement",
+      "HiSpark",
+      "待验收"
+    ],
+    "created_at": "2026-04-09T14:19:40+08:00",
+    "updated_at": "2026-05-07T09:53:14+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1764",
+    "title": "[openapi] 仓名+tag名查询tag是否存在",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1764",
+    "reporter": "吕一明",
+    "reporter_login": "lvyiming01",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "CANN",
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-04-09T09:47:02+08:00",
+    "updated_at": "2026-05-07T09:53:00+08:00",
+    "comments": 5
+  },
+  {
+    "number": "1763",
+    "title": "[openapi] https://docs.gitcode.com/docs/apis/get-api-v-5-repos-owner-repo-hooks 获取仓库webhook接口不支持查看激活状态",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1763",
+    "reporter": "吕一明",
+    "reporter_login": "lvyiming01",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "CANN",
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-04-09T09:45:32+08:00",
+    "updated_at": "2026-05-07T09:52:59+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1762",
+    "title": "[其他问题] [姚孝添] 用户希望merge合入支持如下配置",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1762",
+    "reporter": "姚小白",
+    "reporter_login": "yao-xiaobai",
+    "type": "question",
+    "communities": [
+      "MindSpore"
+    ],
+    "status_tags": [],
+    "labels": [
+      "MindSpore",
+      "question"
+    ],
+    "created_at": "2026-04-07T15:51:30+08:00",
+    "updated_at": "2026-05-15T11:22:35+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1760",
+    "title": "[新增 OpenAPI 反馈]- 项目下面新增公告栏",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1760",
+    "reporter": "HiS-CI",
+    "reporter_login": "HiS-CI",
+    "type": "enhancement",
+    "communities": [
+      "HiSpark"
+    ],
+    "status_tags": [],
+    "labels": [
+      "enhancement",
+      "HiSpark"
+    ],
+    "created_at": "2026-04-01T09:47:48+08:00",
+    "updated_at": "2026-04-28T09:30:02+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1757",
+    "title": "[示例代码同源bug] 代码块上方插入同源标签异常 ",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1757",
+    "reporter": "方金旭",
+    "reporter_login": "fang-jinxu",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-03-30T19:07:20+08:00",
+    "updated_at": "2026-05-18T11:46:30+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1756",
+    "title": "[其他问题] PR详情页的讨论区，时间展示方式优化",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1756",
+    "reporter": "HiSpark-CI",
+    "reporter_login": "HiSpark-CI",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-03-30T15:37:24+08:00",
+    "updated_at": "2026-03-31T11:30:06+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1755",
+    "title": "[其他问题] PR详情页的 CLA协议签署的状态和内容展示优化",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1755",
+    "reporter": "HiSpark-CI",
+    "reporter_login": "HiSpark-CI",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-03-30T15:11:38+08:00",
+    "updated_at": "2026-05-07T09:52:58+08:00",
+    "comments": 3
+  },
+  {
+    "number": "1752",
+    "title": "[其他问题] [李洋行] PR里面检查的日志是否可以设置 过期时间， 日志删除功能",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1752",
+    "reporter": "LiYanghang",
+    "reporter_login": "LiYanghang00",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-03-27T17:34:54+08:00",
+    "updated_at": "2026-03-30T20:49:23+08:00",
+    "comments": 3
+  },
+  {
+    "number": "1748",
+    "title": "[其他问题] 【CANN】社区仓支持标签、权限配置，PR能力及展示优化",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1748",
+    "reporter": "Larry",
+    "reporter_login": "Larry_liuyi",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-03-26T11:12:06+08:00",
+    "updated_at": "2026-05-25T15:57:24+08:00",
+    "comments": 4
+  },
+  {
+    "number": "1747",
+    "title": "[其他问题] 【何鑫】创建PR  接口 响应error了， 但PR创建出来了",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1747",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-03-25T15:42:36+08:00",
+    "updated_at": "2026-04-23T15:54:38+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1740",
+    "title": "[新增 OpenAPI 反馈]- gitcode组织和仓库成员可以通过群组来进行管控",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1740",
+    "reporter": "HiS-CI",
+    "reporter_login": "HiS-CI",
+    "type": "enhancement",
+    "communities": [
+      "HiSpark"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "enhancement",
+      "HiSpark",
+      "待验收"
+    ],
+    "created_at": "2026-03-19T19:55:09+08:00",
+    "updated_at": "2026-04-28T09:30:17+08:00",
+    "comments": 4
+  },
+  {
+    "number": "1719",
+    "title": "[其他问题] markdown文件的diffs，希望提供渲染后的对比。源码和渲染后的可自由选择",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1719",
+    "reporter": "黄桂军",
+    "reporter_login": "stevenaw0",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-03-09T14:59:32+08:00",
+    "updated_at": "2026-03-09T19:35:39+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1714",
+    "title": "[PR diff]【冯超】PR diff 下载需要支持游客模式查看/下载",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1714",
+    "reporter": "ibforu",
+    "reporter_login": "ibforu",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-03-06T14:29:33+08:00",
+    "updated_at": "2026-03-06T15:28:45+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1712",
+    "title": "[其他问题] 【林泽鑫】邀请组织成员会覆盖项目成员原来的角色 -「同企业版的权限覆盖策略-下放到组织与项目的关系」",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1712",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-03-05T09:56:16+08:00",
+    "updated_at": "2026-03-05T10:20:58+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1705",
+    "title": "[需求]【冯超】企业版汇总功能需求",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1705",
+    "reporter": "ibforu",
+    "reporter_login": "ibforu",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-03-03T10:01:04+08:00",
+    "updated_at": "2026-05-15T11:45:42+08:00",
+    "comments": 9
+  },
+  {
+    "number": "1693",
+    "title": "[Ascend] [姚孝添] PR更新之后，评审人可以查看增量修改，并对增量添加新的评审意见",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1693",
+    "reporter": "姚小白",
+    "reporter_login": "yao-xiaobai",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "question"
+    ],
+    "created_at": "2026-02-25T14:26:40+08:00",
+    "updated_at": "2026-05-27T14:08:44+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1692",
+    "title": "[Ascend] [姚孝添] 提交评审意见时，可以显式选择（approve），该标志在代码提交人重新request review之后被清除",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1692",
+    "reporter": "姚小白",
+    "reporter_login": "yao-xiaobai",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "question"
+    ],
+    "created_at": "2026-02-25T14:25:56+08:00",
+    "updated_at": "2026-02-26T10:28:02+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1691",
+    "title": "[Ascend] [姚孝添] 提交评审意见时，可以显式选择（request changes），系统可以据此阻止合入",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1691",
+    "reporter": "姚小白",
+    "reporter_login": "yao-xiaobai",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "question"
+    ],
+    "created_at": "2026-02-25T14:25:20+08:00",
+    "updated_at": "2026-02-26T10:25:18+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1686",
+    "title": "[其他问题] 【CANN】当前申请的token权限不支持按照仓库维度进行授权，即选择部分仓库进行授权",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1686",
+    "reporter": "Larry",
+    "reporter_login": "Larry_liuyi",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-02-25T08:55:57+08:00",
+    "updated_at": "2026-04-09T09:55:17+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1684",
+    "title": "[其他问题] 【吴峰光、曹志】release查询下载希望不用token认证",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1684",
+    "reporter": "吕一明",
+    "reporter_login": "lvyiming01",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-02-24T09:19:56+08:00",
+    "updated_at": "2026-05-22T13:42:12+08:00",
+    "comments": 10
+  },
+  {
+    "number": "1674",
+    "title": "[其他问题] 检查-流水线-产物下载需要提供无认证方式",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1674",
+    "reporter": "zhaoxufeng",
+    "reporter_login": "zxf_0731",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-02-09T17:11:48+08:00",
+    "updated_at": "2026-05-19T14:41:51+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1671",
+    "title": "[Issue状态]【冯超】平台Issue关闭的策略需要完善",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1671",
+    "reporter": "ibforu",
+    "reporter_login": "ibforu",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-02-06T15:02:27+08:00",
+    "updated_at": "2026-02-06T16:03:23+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1667",
+    "title": "[其他问题] 【何鑫】https://gitcode.com/openharmony-tpc/chromium_src/pull/5690  发现这个PR 下的commit（只有1笔）  https://gitcode.com/openharmony-tpc/chromium_src/commit/18fc5128183a5f482216801157ab50ca89ac9fba页面显示不出来",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1667",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-02-05T09:34:35+08:00",
+    "updated_at": "2026-04-20T09:34:38+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1657",
+    "title": "[其他问题] 【CANN】PR标签展示优化建议合并历史信息展示，PR评论展示支持固定信息展示在底部",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1657",
+    "reporter": "Larry",
+    "reporter_login": "Larry_liuyi",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [],
+    "labels": [
+      "CANN",
+      "question"
+    ],
+    "created_at": "2026-01-31T17:29:38+08:00",
+    "updated_at": "2026-05-14T13:58:04+08:00",
+    "comments": 3
+  },
+  {
+    "number": "1645",
+    "title": "[新增 OpenAPI 反馈]- \"获取一个用户\"RestAPI很多字段缺失",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1645",
+    "reporter": "Shengbao Li",
+    "reporter_login": "lishengbao",
+    "type": "enhancement",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "CANN",
+      "enhancement",
+      "待验收"
+    ],
+    "created_at": "2026-01-28T17:07:19+08:00",
+    "updated_at": "2026-05-09T14:01:02+08:00",
+    "comments": 5
+  },
+  {
+    "number": "1643",
+    "title": "[其他问题] 【田闪】OH企业issue筛选项增加一个issue基础状态，issue导出时该状态可选",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1643",
+    "reporter": "tian-shanddd",
+    "reporter_login": "tian-shanddd",
+    "type": "question",
+    "communities": [
+      "OpenHarmony"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "OpenHarmony",
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-01-28T15:36:46+08:00",
+    "updated_at": "2026-05-19T20:53:46+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1637",
+    "title": "[其他问题] [陈攀]issue转移期望支持以下场景：源仓和目标仓的维护者不是同一个人，转移时需要目标仓的维护者同意",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1637",
+    "reporter": "chenpan10x",
+    "reporter_login": "chenpan10",
+    "type": "other",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "cann",
+      "CANN",
+      "待验收"
+    ],
+    "created_at": "2026-01-27T11:50:15+08:00",
+    "updated_at": "2026-04-24T15:40:23+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1636",
+    "title": "[其他问题] [陈攀]仅PR创建权限， 无法点击revert创建PR",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1636",
+    "reporter": "chenpan10x",
+    "reporter_login": "chenpan10",
+    "type": "other",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "cann",
+      "CANN",
+      "待验收"
+    ],
+    "created_at": "2026-01-27T11:48:04+08:00",
+    "updated_at": "2026-04-24T14:05:25+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1633",
+    "title": "[其他问题] [姚孝添]   PR 列表页面希望加上审查情况",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1633",
+    "reporter": "姚小白",
+    "reporter_login": "yao-xiaobai",
+    "type": "question",
+    "communities": [
+      "MindSpore"
+    ],
+    "status_tags": [
+      "长期演进"
+    ],
+    "labels": [
+      "MindSpore",
+      "question",
+      "长期演进"
+    ],
+    "created_at": "2026-01-26T16:33:30+08:00",
+    "updated_at": "2026-02-09T09:50:43+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1630",
+    "title": "[新增 OpenAPI 反馈]- 企业和组织以及项目下面的成员在网页端支持查看详情是被谁邀请以及什么时间邀请进来的以及邀请进来给与的什么角色，以及后面每次成员角色变动都要有日志可以查看",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1630",
+    "reporter": "hisi-opensource",
+    "reporter_login": "hisi-opensource",
+    "type": "enhancement",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [
+      "长期演进"
+    ],
+    "labels": [
+      "enhancement",
+      "长期演进"
+    ],
+    "created_at": "2026-01-26T11:09:55+08:00",
+    "updated_at": "2026-02-09T09:51:56+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1628",
+    "title": "[新增 OpenAPI 反馈]- 用户强推后没有触发新的构建流水线导致合并受阻未获取到流水线数据提示不够明显",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1628",
+    "reporter": "hisi-opensource",
+    "reporter_login": "hisi-opensource",
+    "type": "enhancement",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "enhancement",
+      "待验收"
+    ],
+    "created_at": "2026-01-26T10:51:24+08:00",
+    "updated_at": "2026-05-19T20:04:43+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1627",
+    "title": "[新增 OpenAPI 反馈]- gitcode在组织下面新增项目后无法在网页上面查看创建时间和创建人，以及删除项目后也没有日志可以查看",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1627",
+    "reporter": "hisi-opensource",
+    "reporter_login": "hisi-opensource",
+    "type": "enhancement",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [
+      "长期演进"
+    ],
+    "labels": [
+      "enhancement",
+      "长期演进"
+    ],
+    "created_at": "2026-01-26T10:34:03+08:00",
+    "updated_at": "2026-02-09T09:54:18+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1625",
+    "title": "[消息通知]【冯超】消息通知优化",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1625",
+    "reporter": "ibforu",
+    "reporter_login": "ibforu",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [
+      "长期演进"
+    ],
+    "labels": [
+      "question",
+      "长期演进"
+    ],
+    "created_at": "2026-01-23T17:00:08+08:00",
+    "updated_at": "2026-02-09T09:55:08+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1621",
+    "title": "[OpenAPI]【冯超】rebase合入会受仓库合入配置影响，期望固定 fast-forward",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1621",
+    "reporter": "ibforu",
+    "reporter_login": "ibforu",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-01-23T07:50:29+08:00",
+    "updated_at": "2026-01-23T14:36:26+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1617",
+    "title": "[其他问题] [姚孝添] 检视意见显示有问题",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1617",
+    "reporter": "姚小白",
+    "reporter_login": "yao-xiaobai",
+    "type": "question",
+    "communities": [
+      "openEuler"
+    ],
+    "status_tags": [],
+    "labels": [
+      "openEuler",
+      "question"
+    ],
+    "created_at": "2026-01-22T10:07:09+08:00",
+    "updated_at": "2026-05-22T13:43:11+08:00",
+    "comments": 4
+  },
+  {
+    "number": "1615",
+    "title": "[PR描述]【冯超】PR描述当前限制为10000字符，需要提高限制 ",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1615",
+    "reporter": "ibforu",
+    "reporter_login": "ibforu",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2026-01-21T18:26:13+08:00",
+    "updated_at": "2026-05-21T11:29:05+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1612",
+    "title": "[其他问题] 【徐亮】https://api.gitcode.com/api/v5/repos/openharmony-tpc/openharmony_tpc_samples/pulls/$pr_num/diff 当前接口是否可以做成不鉴权的，即不需要token.",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1612",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-01-21T11:48:50+08:00",
+    "updated_at": "2026-05-18T11:47:00+08:00",
+    "comments": 3
+  },
+  {
+    "number": "1606",
+    "title": "[其他问题] 【姚孝添】检视意见用户希望点击的时候，希望跳转得代码是当前版本和下一个版本的差别",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1606",
+    "reporter": "姚小白",
+    "reporter_login": "yao-xiaobai",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [
+      "长期演进"
+    ],
+    "labels": [
+      "CANN",
+      "question",
+      "长期演进"
+    ],
+    "created_at": "2026-01-19T17:29:20+08:00",
+    "updated_at": "2026-06-10T16:22:40+08:00",
+    "comments": 3
+  },
+  {
+    "number": "1582",
+    "title": "[新增 OpenAPI 反馈]- 企业和组织内部成员提交代码后在提交界面依然有CLA协议提醒，实际上组织内部成员并不需要该提醒，提醒有误，让用户造成误解",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1582",
+    "reporter": "hisi-opensource",
+    "reporter_login": "hisi-opensource",
+    "type": "enhancement",
+    "communities": [
+      "HiSpark"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "enhancement",
+      "HiSpark",
+      "待验收"
+    ],
+    "created_at": "2026-01-12T15:05:15+08:00",
+    "updated_at": "2026-05-19T21:01:46+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1579",
+    "title": "[其他问题] 【田闪】有issue创建和更新权限，但是issue没有转移按钮",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1579",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "question",
+      "待验收"
+    ],
+    "created_at": "2026-01-09T16:10:33+08:00",
+    "updated_at": "2026-04-24T14:05:20+08:00",
+    "comments": 4
+  },
+  {
+    "number": "1538",
+    "title": "[新增 OpenAPI 反馈]- 强制推送的权限需要细化，保护分支里面的推送有普通推送权限还有强制推送权限，对于有需要强制推送的分支风险较大",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1538",
+    "reporter": "hisi-opensource",
+    "reporter_login": "hisi-opensource",
+    "type": "enhancement",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [
+      "长期演进"
+    ],
+    "labels": [
+      "enhancement",
+      "长期演进"
+    ],
+    "created_at": "2025-12-27T16:52:05+08:00",
+    "updated_at": "2026-02-09T10:05:40+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1532",
+    "title": "[欧拉迁移] 【曹志、冯超】页面问题，修改个人昵称失败",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1532",
+    "reporter": "吕一明",
+    "reporter_login": "lvyiming01",
+    "type": "question",
+    "communities": [
+      "openEuler"
+    ],
+    "status_tags": [
+      "长期演进"
+    ],
+    "labels": [
+      "openEuler",
+      "question",
+      "长期演进"
+    ],
+    "created_at": "2025-12-26T17:45:38+08:00",
+    "updated_at": "2026-02-09T10:07:22+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1507",
+    "title": "[需求] 【卢松】页面留白实在太多了，这么一点内容就占了快半个屏幕 叠加上上面的问题 就导致使用起来没那么方便",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1507",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [
+      "长期演进"
+    ],
+    "labels": [
+      "question",
+      "长期演进"
+    ],
+    "created_at": "2025-12-24T09:01:29+08:00",
+    "updated_at": "2026-02-13T15:30:49+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1499",
+    "title": "[其他问题]【付勇】 看不到评论，PR的检视意见显示有问题",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1499",
+    "reporter": "吕一明",
+    "reporter_login": "lvyiming01",
+    "type": "question",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "question"
+    ],
+    "created_at": "2025-12-23T14:55:42+08:00",
+    "updated_at": "2026-05-29T09:41:53+08:00",
+    "comments": 5
+  },
+  {
+    "number": "1497",
+    "title": "[欧拉迁移] 【曹志、冯超】watch/star 数据丢失",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1497",
+    "reporter": "吕一明",
+    "reporter_login": "lvyiming01",
+    "type": "question",
+    "communities": [
+      "openEuler"
+    ],
+    "status_tags": [],
+    "labels": [
+      "openEuler",
+      "question"
+    ],
+    "created_at": "2025-12-22T21:15:41+08:00",
+    "updated_at": "2026-05-15T11:25:58+08:00",
+    "comments": 4
+  },
+  {
+    "number": "1466",
+    "title": "[其他问题] 【葛亚芳】能一键筛选自己的评论意见不，每次都要一条条去展开去找",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1466",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [
+      "长期演进"
+    ],
+    "labels": [
+      "question",
+      "第四批迁移",
+      "长期演进"
+    ],
+    "created_at": "2025-12-17T17:16:29+08:00",
+    "updated_at": "2026-04-20T09:45:48+08:00",
+    "comments": 6
+  },
+  {
+    "number": "1456",
+    "title": "[其他问题] 【卫腾飞】页面展示 是不是落后了，库上最新的代码。已经是1022 行了",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1456",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question",
+      "第四批迁移"
+    ],
+    "created_at": "2025-12-15T16:39:43+08:00",
+    "updated_at": "2025-12-16T11:04:53+08:00",
+    "comments": 3
+  },
+  {
+    "number": "1452",
+    "title": "[用户反馈]【冯超】openEuler 社区用户 问题回复",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1452",
+    "reporter": "ibforu",
+    "reporter_login": "ibforu",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2025-12-11T19:20:33+08:00",
+    "updated_at": "2026-05-15T10:57:13+08:00",
+    "comments": 3
+  },
+  {
+    "number": "1430",
+    "title": "[企业全局Issue搜索] （冯超）搜索仓库时，没有组织名称，排序有问题",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1430",
+    "reporter": "ibforu",
+    "reporter_login": "ibforu",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2025-12-04T15:55:30+08:00",
+    "updated_at": "2026-05-15T11:36:25+08:00",
+    "comments": 3
+  },
+  {
+    "number": "1426",
+    "title": "[其他问题] 【田闪】OH企业issue设置按照 创建时间、完成时间、更新时间类型进行排序时，大部分数据未按规则排序",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1426",
+    "reporter": "tian-shanddd",
+    "reporter_login": "tian-shanddd",
+    "type": "question",
+    "communities": [
+      "OpenHarmony"
+    ],
+    "status_tags": [],
+    "labels": [
+      "OpenHarmony",
+      "question"
+    ],
+    "created_at": "2025-12-04T14:31:16+08:00",
+    "updated_at": "2026-05-27T13:35:36+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1382",
+    "title": "【田闪】期望增加个功能，被删除的issue可以在对应页面被检索到，里面包含删除人、删除时间、issue详情等内容",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1382",
+    "reporter": "tian-shanddd",
+    "reporter_login": "tian-shanddd",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2025-11-26T09:37:05+08:00",
+    "updated_at": "2026-01-13T14:49:50+08:00",
+    "comments": 3
+  },
+  {
+    "number": "1380",
+    "title": "[需求] 【李玉杰】希望支持查看某个文件来自于CODEOWNERS文件的哪一行，即希望支持某个文件是哪个codeowner要审核",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1380",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "question",
+      "待验收",
+      "第四批迁移"
+    ],
+    "created_at": "2025-11-25T15:54:59+08:00",
+    "updated_at": "2026-04-24T14:05:08+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1371",
+    "title": "[新增需求] 【CANN】对接gitcode的jenkins插件新增支持PR的标签导致PR更新的事件",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1371",
+    "reporter": "yp_hw_user",
+    "reporter_login": "yp_hw_user",
+    "type": "question",
+    "communities": [
+      "CANN"
+    ],
+    "status_tags": [
+      "长期演进"
+    ],
+    "labels": [
+      "CANN",
+      "question",
+      "长期演进"
+    ],
+    "created_at": "2025-11-21T16:23:49+08:00",
+    "updated_at": "2026-04-23T11:59:33+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1363",
+    "title": "[其他问题] 【葛亚芳】RP 已读文件数显示不对",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1363",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question",
+      "文档团队"
+    ],
+    "created_at": "2025-11-17T16:51:45+08:00",
+    "updated_at": "2026-03-27T14:19:20+08:00",
+    "comments": 3
+  },
+  {
+    "number": "1311",
+    "title": "[咨询问题] 【曾锦山】我们这边统计的commit，需要是已经合入的pr，且需要知道对应commit的pr地址，帮忙看下是否有比较好的方案去关联",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1311",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question",
+      "第四批迁移"
+    ],
+    "created_at": "2025-10-31T11:42:02+08:00",
+    "updated_at": "2025-11-12T10:19:12+08:00",
+    "comments": 11
+  },
+  {
+    "number": "1240",
+    "title": "[其他问题] 【郝伟东w】这个页面布局建议系统提示信息更紧凑一些，这样可以少折叠一些信息",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1240",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question",
+      "第四批迁移"
+    ],
+    "created_at": "2025-10-11T14:46:10+08:00",
+    "updated_at": "2026-05-07T09:52:24+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1226",
+    "title": "[需求] [刘团团] 希望gitcode支持codeowner通过链接形式批量修改（GitHub Team功能）",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1226",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question",
+      "第四批迁移"
+    ],
+    "created_at": "2025-09-30T09:20:12+08:00",
+    "updated_at": "2026-05-27T12:03:50+08:00",
+    "comments": 5
+  },
+  {
+    "number": "1225",
+    "title": "[其他问题] 【惠培子】评审意见跳转好像还是有点问题https://gitcode.com/openharmony/docs/pull/110056",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1225",
+    "reporter": "Liushaoqiang",
+    "reporter_login": "ShaoqiangLiu",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2025-09-29T20:01:57+08:00",
+    "updated_at": "2026-04-17T14:47:01+08:00",
+    "comments": 5
+  },
+  {
+    "number": "1217",
+    "title": "[新增 OpenAPI 反馈]- 赵一可-期望gitcode增加类似codehub的MR导出能力",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1217",
+    "reporter": "zhaoyike",
+    "reporter_login": "zhaoyike",
+    "type": "enhancement",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "enhancement"
+    ],
+    "created_at": "2025-09-28T16:29:18+08:00",
+    "updated_at": "2025-09-28T17:10:09+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1204",
+    "title": "[openEuler 管理需求] （冯超）企业管理需要增加字段，用来标识用户身份",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1204",
+    "reporter": "ibforu",
+    "reporter_login": "ibforu",
+    "type": "question",
+    "communities": [
+      "openEuler"
+    ],
+    "status_tags": [],
+    "labels": [
+      "openEuler",
+      "question"
+    ],
+    "created_at": "2025-09-25T16:44:09+08:00",
+    "updated_at": "2025-10-22T13:53:11+08:00",
+    "comments": 4
+  },
+  {
+    "number": "1171",
+    "title": "[其他问题] 【李旭东】gitcode APP能增加一个扫描登陆网页版吗?",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1171",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question",
+      "第四批迁移"
+    ],
+    "created_at": "2025-09-19T14:55:26+08:00",
+    "updated_at": "2025-09-22T16:45:53+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1156",
+    "title": "[需求] 【杨博】希望gitcode 参考gitee在 提交里可以直接看到PR的超链接",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1156",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question",
+      "第四批迁移"
+    ],
+    "created_at": "2025-09-18T14:40:05+08:00",
+    "updated_at": "2025-12-23T17:49:18+08:00",
+    "comments": 4
+  },
+  {
+    "number": "1099",
+    "title": "[其他问题] 【惠培子】评论跳转超时",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1099",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question",
+      "文档团队"
+    ],
+    "created_at": "2025-09-11T11:45:22+08:00",
+    "updated_at": "2026-04-17T14:58:37+08:00",
+    "comments": 9
+  },
+  {
+    "number": "1098",
+    "title": "[其他问题] [秦柯柯] PR页面任务日志冗常，建议参考gtiee pr页面对标签等其他可以合并的事件自动合并，避免页面冗长",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1098",
+    "reporter": "AtlasAccount",
+    "reporter_login": "AtlasAccount",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2025-09-10T17:24:14+08:00",
+    "updated_at": "2026-05-15T10:55:17+08:00",
+    "comments": 2
+  },
+  {
+    "number": "1057",
+    "title": "[其他问题]-【杜平】拉分支步骤简化",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1057",
+    "reporter": "AtlasAccount",
+    "reporter_login": "AtlasAccount",
+    "type": "enhancement",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [],
+    "labels": [
+      "Ascend",
+      "enhancement",
+      "分析中"
+    ],
+    "created_at": "2025-08-27T10:11:59+08:00",
+    "updated_at": "2025-09-03T13:57:29+08:00",
+    "comments": 1
+  },
+  {
+    "number": "1056",
+    "title": "[其他问题] 【冯超 姚孝添】 用户希望能够批量编辑保护分支属性",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/1056",
+    "reporter": "姚小白",
+    "reporter_login": "yao-xiaobai",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2025-08-27T10:09:44+08:00",
+    "updated_at": "2026-01-14T14:30:52+08:00",
+    "comments": 2
+  },
+  {
+    "number": "982",
+    "title": "[其他问题] 【马明帅】审计日志追加 分支信息",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/982",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question",
+      "文档团队"
+    ],
+    "created_at": "2025-07-30T11:06:22+08:00",
+    "updated_at": "2025-07-30T11:08:49+08:00",
+    "comments": 0
+  },
+  {
+    "number": "981",
+    "title": "[其他问题] 【惠培子】项目名称显示不完整，什么时候可以优化呢，看起来太费劲了",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/981",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question",
+      "文档团队"
+    ],
+    "created_at": "2025-07-30T11:03:06+08:00",
+    "updated_at": "2025-07-30T11:05:04+08:00",
+    "comments": 0
+  },
+  {
+    "number": "916",
+    "title": "[需求] 【陈胜】 建议添加文件上的评论功能，目前只能在代码上评论，像这种文件级别的就没法评论了。只能放在一个代码的地方",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/916",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "OpenHarmony"
+    ],
+    "status_tags": [
+      "待验收"
+    ],
+    "labels": [
+      "OpenHarmony",
+      "question",
+      "待验收"
+    ],
+    "created_at": "2025-07-17T16:32:33+08:00",
+    "updated_at": "2026-06-04T17:01:46+08:00",
+    "comments": 4
+  },
+  {
+    "number": "878",
+    "title": "[其他问题] 【葛亚芳】想点击创建轻量级PR，还老是出现这个弹框被挡住",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/878",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "other",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "文档团队"
+    ],
+    "created_at": "2025-07-09T15:14:45+08:00",
+    "updated_at": "2025-07-09T17:32:14+08:00",
+    "comments": 1
+  },
+  {
+    "number": "871",
+    "title": "[需求]- (冯超 姚孝添)  在pr  commit 填写检视意见不会回显至评论区，也不会添加至评论意见",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/871",
+    "reporter": "姚小白",
+    "reporter_login": "yao-xiaobai",
+    "type": "other",
+    "communities": [
+      "openGauss"
+    ],
+    "status_tags": [
+      "待排期"
+    ],
+    "labels": [
+      "openGauss",
+      "待排期"
+    ],
+    "created_at": "2025-07-03T11:34:48+08:00",
+    "updated_at": "2025-07-20T22:42:04+08:00",
+    "comments": 1
+  },
+  {
+    "number": "864",
+    "title": "[需求]  [冯超 姚孝添] 企业标签支持搜索",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/864",
+    "reporter": "姚小白",
+    "reporter_login": "yao-xiaobai",
+    "type": "other",
+    "communities": [
+      "Ascend"
+    ],
+    "status_tags": [
+      "长期演进"
+    ],
+    "labels": [
+      "Ascend",
+      "长期演进"
+    ],
+    "created_at": "2025-07-02T11:41:50+08:00",
+    "updated_at": "2025-07-20T22:41:35+08:00",
+    "comments": 1
+  },
+  {
+    "number": "855",
+    "title": "[需求] （冯超）社区的组织或企业管理页面，需要增加【LFS查看功能】",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/855",
+    "reporter": "ibforu",
+    "reporter_login": "ibforu",
+    "type": "other",
+    "communities": [
+      "openGauss"
+    ],
+    "status_tags": [
+      "长期演进"
+    ],
+    "labels": [
+      "openGauss",
+      "长期演进"
+    ],
+    "created_at": "2025-06-28T16:13:44+08:00",
+    "updated_at": "2025-07-08T16:38:55+08:00",
+    "comments": 3
+  },
+  {
+    "number": "822",
+    "title": "[需求] （冯超、王晓亮）PR详情的文件改动预览页面，增加预览功能",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/822",
+    "reporter": "wxltrulli",
+    "reporter_login": "wxltrulli",
+    "type": "other",
+    "communities": [
+      "openGauss"
+    ],
+    "status_tags": [
+      "待排期"
+    ],
+    "labels": [
+      "CodeArts",
+      "openGauss",
+      "待排期"
+    ],
+    "created_at": "2025-06-11T15:25:02+08:00",
+    "updated_at": "2026-05-15T10:52:20+08:00",
+    "comments": 3
+  },
+  {
+    "number": "802",
+    "title": "[其他问题] -新建 PR 超时问题排查",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/802",
+    "reporter": "xxm",
+    "reporter_login": "gitcode-xxm",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question"
+    ],
+    "created_at": "2025-06-03T19:16:40+08:00",
+    "updated_at": "2025-06-03T19:16:40+08:00",
+    "comments": 0
+  },
+  {
+    "number": "800",
+    "title": "[openfuyao需求] [张帆]希望统计数区分登陆与未登录状态的数量统计",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/800",
+    "reporter": "unknown",
+    "reporter_login": "unknown",
+    "type": "other",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [
+      "长期演进"
+    ],
+    "labels": [
+      "openFuyao",
+      "长期演进"
+    ],
+    "created_at": "2025-06-03T14:13:36+08:00",
+    "updated_at": "2025-07-20T22:39:10+08:00",
+    "comments": 4
+  },
+  {
+    "number": "717",
+    "title": "[openGauss需求]（冯超、王晓亮）PR导出功能",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/717",
+    "reporter": "wxltrulli",
+    "reporter_login": "wxltrulli",
+    "type": "other",
+    "communities": [
+      "openGauss"
+    ],
+    "status_tags": [
+      "待排期"
+    ],
+    "labels": [
+      "CodeArts",
+      "openGauss",
+      "中优先级",
+      "待排期"
+    ],
+    "created_at": "2025-05-06T16:01:37+08:00",
+    "updated_at": "2026-05-15T10:52:24+08:00",
+    "comments": 12
+  },
+  {
+    "number": "688",
+    "title": "[其他问题] [惠培子]帮助中搜索功能排序优化",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/688",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "other",
+    "communities": [
+      "OpenHarmony"
+    ],
+    "status_tags": [],
+    "labels": [
+      "OpenHarmony",
+      "挂起",
+      "文档团队"
+    ],
+    "created_at": "2025-04-22T12:03:12+08:00",
+    "updated_at": "2025-06-25T18:09:45+08:00",
+    "comments": 1
+  },
+  {
+    "number": "421",
+    "title": "[新增需求](杨妮)(一般)issue筛选只有开启，关闭，没有进行中需要增加",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/421",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "other",
+    "communities": [
+      "OpenHarmony"
+    ],
+    "status_tags": [],
+    "labels": [
+      "OpenHarmony",
+      "挂起",
+      "文档团队"
+    ],
+    "created_at": "2024-12-03T10:18:20+08:00",
+    "updated_at": "2025-06-18T23:07:04+08:00",
+    "comments": 3
+  },
+  {
+    "number": "341",
+    "title": "[新增需求](惠培子)(一般)如何统计每个版本分支中的问题数量",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/341",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "OpenHarmony"
+    ],
+    "status_tags": [],
+    "labels": [
+      "OpenHarmony",
+      "question",
+      "挂起",
+      "文档团队"
+    ],
+    "created_at": "2024-11-22T14:26:43+08:00",
+    "updated_at": "2025-06-18T23:12:49+08:00",
+    "comments": 3
+  },
+  {
+    "number": "340",
+    "title": "[新增需求](惠培子)(一般)如何统计每个版本分支中的PR数量与规模",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/340",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "question",
+    "communities": [
+      "OpenHarmony"
+    ],
+    "status_tags": [],
+    "labels": [
+      "OpenHarmony",
+      "question",
+      "挂起",
+      "文档团队"
+    ],
+    "created_at": "2024-11-22T14:25:54+08:00",
+    "updated_at": "2025-06-18T23:13:18+08:00",
+    "comments": 3
+  },
+  {
+    "number": "339",
+    "title": "[新增需求](惠培子)(一般)如何统计每个PR中修改的行数和字数？用于缺陷密度统计",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/339",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "other",
+    "communities": [
+      "OpenHarmony"
+    ],
+    "status_tags": [],
+    "labels": [
+      "documentation",
+      "OpenHarmony",
+      "挂起",
+      "文档团队"
+    ],
+    "created_at": "2024-11-22T14:24:33+08:00",
+    "updated_at": "2025-06-18T23:13:34+08:00",
+    "comments": 3
+  },
+  {
+    "number": "338",
+    "title": "[新增需求](惠培子)(一般)如何统计每个PR中的评审的问题数量",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/338",
+    "reporter": "张紫娃",
+    "reporter_login": "weixin_37646636",
+    "type": "enhancement",
+    "communities": [
+      "OpenHarmony"
+    ],
+    "status_tags": [],
+    "labels": [
+      "enhancement",
+      "OpenHarmony",
+      "挂起",
+      "文档团队"
+    ],
+    "created_at": "2024-11-22T14:22:15+08:00",
+    "updated_at": "2026-05-21T14:51:18+08:00",
+    "comments": 5
+  },
+  {
+    "number": "186",
+    "title": "[新增 OpenAPI 反馈]- 新增获取 PR 审查状态的接口",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/186",
+    "reporter": "xxm",
+    "reporter_login": "gitcode-xxm",
+    "type": "enhancement",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "enhancement",
+      "挂起",
+      "星火-OpenHiTLS",
+      "非问题"
+    ],
+    "created_at": "2024-10-24T11:24:16+08:00",
+    "updated_at": "2026-05-21T14:50:55+08:00",
+    "comments": 0
+  },
+  {
+    "number": "81",
+    "title": "[限流功能优化] - 支持多用户、多维护配置的限流",
+    "html_url": "https://gitcode.com/gitcode-dev/euler-api-list/issues/81",
+    "reporter": "xxm",
+    "reporter_login": "gitcode-xxm",
+    "type": "question",
+    "communities": [
+      "其他"
+    ],
+    "status_tags": [],
+    "labels": [
+      "question",
+      "转产品需求",
+      "非问题"
+    ],
+    "created_at": "2024-09-12T16:37:07+08:00",
+    "updated_at": "2026-05-21T14:50:39+08:00",
+    "comments": 2
+  }
+]
