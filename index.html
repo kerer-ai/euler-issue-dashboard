@@ -248,6 +248,95 @@ body {
   .comm-row .comm-name { width: 60px; font-size: 10px; }
   .bottom-row { grid-template-columns: 1fr; }
 }
+
+.tab-nav {
+  display: flex; gap: 0; background: var(--card-bg);
+  border-bottom: 1px solid var(--border); padding: 0 32px;
+}
+.tab-nav .tab-btn {
+  padding: 10px 20px; font-size: 13px; cursor: pointer;
+  color: var(--text-muted); border-bottom: 2px solid transparent;
+  transition: all 0.15s; background: none; border-top: none; border-left: none; border-right: none;
+  font-family: var(--font);
+}
+.tab-nav .tab-btn:hover { color: var(--text); }
+.tab-nav .tab-btn.active {
+  color: var(--blue); border-bottom-color: var(--blue); font-weight: 600;
+}
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* AI Insight Tab */
+.ai-banner {
+  background: linear-gradient(135deg, #064e3b, #065f46);
+  color: #d1fae5; border-radius: var(--radius);
+  padding: 18px 24px; margin-bottom: 16px; line-height: 1.7; font-size: 13px;
+}
+.ai-banner .ai-banner-title { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+.ai-banner .ai-banner-body { opacity: 0.92; }
+.ai-banner .ai-banner-body strong { color: #6ee7b7; }
+.ai-category-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.ai-cat-card {
+  background: var(--card-bg); border-radius: 8px; padding: 16px;
+  box-shadow: var(--shadow); cursor: pointer; transition: all 0.15s;
+  border-left: 4px solid var(--border);
+}
+.ai-cat-card:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+.ai-cat-card.p0 { border-left-color: var(--red); }
+.ai-cat-card.p1 { border-left-color: var(--orange); }
+.ai-cat-card.p2 { border-left-color: var(--green); }
+.ai-cat-card .cat-header { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.ai-cat-card .cat-priority {
+  padding: 2px 8px; border-radius: 10px; font-size: 10px; font-weight: 700; white-space: nowrap;
+}
+.p0 .cat-priority { background: var(--red-bg); color: var(--red); }
+.p1 .cat-priority { background: var(--orange-bg); color: var(--orange); }
+.p2 .cat-priority { background: var(--green-bg); color: var(--green); }
+.ai-cat-card .cat-theme { font-size: 13px; font-weight: 600; }
+.ai-cat-card .cat-count { margin-left: auto; font-size: 11px; color: var(--text-muted); white-space: nowrap; }
+.ai-cat-card .cat-summary { font-size: 11px; color: var(--text-muted); margin: 6px 0 8px; line-height: 1.5; }
+.ai-cat-card .cat-expand { font-size: 10px; color: var(--blue); }
+.ai-cat-card .cat-expand:hover { text-decoration: underline; }
+
+/* Expanded detail */
+.ai-cat-detail {
+  background: var(--card-bg); border-radius: 8px; padding: 16px;
+  box-shadow: var(--shadow); margin-bottom: 12px; border: 2px solid var(--blue);
+}
+.ai-cat-detail.p0 { border-color: var(--red); }
+.ai-cat-detail.p1 { border-color: var(--orange); }
+.ai-cat-detail.p2 { border-color: var(--green); }
+.ai-cat-detail .detail-header {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;
+}
+.ai-cat-detail .detail-suggestion {
+  font-size: 11px; color: var(--text-muted); margin-bottom: 10px;
+  background: #f9fafb; padding: 8px 12px; border-radius: 6px;
+}
+.ai-cat-detail .detail-collapse { font-size: 11px; color: var(--text-muted); cursor: pointer; }
+.ai-cat-detail .detail-collapse:hover { color: var(--text); }
+.detail-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+.detail-table thead th {
+  background: #fafbfc; padding: 6px 8px; text-align: left;
+  font-weight: 600; color: var(--text-muted); font-size: 10px;
+  text-transform: uppercase; border-bottom: 2px solid var(--border);
+}
+.detail-table tbody td { padding: 5px 8px; border-bottom: 1px solid #f3f4f6; }
+.detail-table .detail-issue-link {
+  color: var(--blue); text-decoration: none; max-width: 400px;
+  display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.detail-table .detail-issue-link:hover { text-decoration: underline; }
+
+.ai-empty .ai-empty-cmd {
+  display: inline-block; background: #f3f4f6; padding: 4px 10px;
+  border-radius: 6px; font-family: monospace; font-size: 12px; margin-top: 6px;
+}
+
+@media (max-width: 900px) {
+  .tab-nav { padding: 0 16px; }
+  .ai-category-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -255,6 +344,11 @@ body {
   <h1>Issue Dashboard <span>/ gitcode-dev/euler-api-list</span></h1>
   <div class="header-meta" id="headerMeta"></div>
 </div>
+<div class="tab-nav">
+  <button class="tab-btn active" data-tab="overview" onclick="switchTab('overview')">📊 看板总览</button>
+  <button class="tab-btn" data-tab="ai" onclick="switchTab('ai')">✨ AI 洞察</button>
+</div>
+<div class="tab-content active" id="tab-overview">
 <div class="container">
   <div class="insight-banner" id="insightBanner"></div>
   <div class="kpi-row" id="kpiRow"></div>
@@ -301,11 +395,33 @@ body {
     </div>
   </div>
 </div>
+</div>
+<div class="tab-content" id="tab-ai">
+  <div class="container" id="aiContainer">
+    <div class="ai-loading" id="aiLoading" style="text-align:center;padding:60px 20px;color:var(--text-muted)">加载中...</div>
+    <div class="ai-content" id="aiContent" style="display:none"></div>
+    <div class="ai-empty" id="aiEmpty" style="display:none;text-align:center;padding:60px 20px;color:var(--text-muted)"></div>
+  </div>
+</div>
 <script>
 let allIssues = [];
 
 let activeFilters = {};
 let currentTypeFilter = '';
+
+let currentTab = 'overview';
+
+function switchTab(tabName) {
+  currentTab = tabName;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tabName));
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.toggle('active', c.id === 'tab-' + tabName));
+  if (tabName === 'ai' && !window._aiLoaded) {
+    window._aiLoaded = true;
+    if (typeof loadAiInsights === 'function') loadAiInsights();
+  }
+  // Update URL hash
+  window.location.hash = tabName === 'ai' ? 'ai-insight' : '';
+}
 
 function applyFilters() {
   let filtered = allIssues;
@@ -720,6 +836,141 @@ function renderTable(issues) {
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
+let aiData = null;
+let expandedCategory = null;
+
+async function loadAiInsights() {
+  const loading = document.getElementById('aiLoading');
+  const content = document.getElementById('aiContent');
+  const empty = document.getElementById('aiEmpty');
+
+  try {
+    const resp = await fetch('ai-insights.json?t=' + Date.now());
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    aiData = await resp.json();
+    if (!aiData || !aiData.categories || !aiData.categories.length) {
+      throw new Error('empty');
+    }
+    renderAiInsights(aiData);
+    loading.style.display = 'none';
+    content.style.display = 'block';
+  } catch(e) {
+    loading.style.display = 'none';
+    empty.style.display = 'block';
+    empty.innerHTML = `<p style="font-size:15px;font-weight:600">暂无 AI 分析数据</p>
+      <p style="font-size:12px;margin-top:8px">运行 <span class="ai-empty-cmd">/ai-insight-analyzer</span> 生成 AI 分析数据</p>`;
+  }
+}
+
+function renderAiInsights(data) {
+  if (!data || !data.categories || !data.categories.length) return;
+
+  const sorted = [...data.categories].sort((a, b) => {
+    const order = { 'P0': 0, 'P1': 1, 'P2': 2 };
+    return (order[a.priority] || 3) - (order[b.priority] || 3);
+  });
+
+  const p0Count = sorted.filter(c => c.priority === 'P0').length;
+  let html = `<div class="ai-banner">
+    <div class="ai-banner-title">🤖 AI 洞察分析</div>
+    <div class="ai-banner-body">
+      基于 <strong>${data.total_issues}</strong> 个 open issues 分析，AI 识别出 <strong>${sorted.length}</strong> 个核心诉求主题。
+      其中 <strong style="color:#fbbf24">${p0Count}</strong> 个为高优先级，需要重点关注。
+      分析时间: ${new Date(data.analyzed_at).toLocaleDateString('zh-CN')}
+    </div>
+  </div>`;
+
+  html += `<div class="ai-category-grid">`;
+  sorted.forEach((cat, idx) => {
+    html += `<div class="ai-cat-card ${cat.priority.toLowerCase()}" onclick="toggleCategory(${idx})" id="catCard${idx}">
+      <div class="cat-header">
+        <span class="cat-priority">${cat.priority} · ${cat.priority === 'P0' ? '高优' : cat.priority === 'P1' ? '中优' : '普通'}</span>
+        <span class="cat-theme">${escapeHtml(cat.theme)}</span>
+        <span class="cat-count">${cat.issue_count} 个 issue</span>
+      </div>
+      <div class="cat-summary">${escapeHtml(cat.summary)}</div>
+      <div class="cat-expand" id="catExpand${idx}">展开查看 ${cat.issue_count} 个关联 issue →</div>
+    </div>`;
+  });
+  html += `</div><div id="detailContainer"></div>`;
+
+  document.getElementById('aiContent').innerHTML = html;
+
+  // Auto-expand first P0 category
+  const firstP0 = sorted.findIndex(c => c.priority === 'P0');
+  if (firstP0 >= 0) {
+    setTimeout(() => toggleCategory(firstP0), 100);
+  }
+}
+
+function findIssueByNumber(num) {
+  if (!allIssues || !allIssues.length) return null;
+  return allIssues.find(i => String(i.number) === String(num)) || null;
+}
+
+function toggleCategory(idx) {
+  const data = aiData && aiData.categories ? aiData.categories : null;
+  if (!data) return;
+  const sorted = [...data].sort((a, b) => {
+    const order = { 'P0': 0, 'P1': 1, 'P2': 2 };
+    return (order[a.priority] || 3) - (order[b.priority] || 3);
+  });
+  const cat = sorted[idx];
+  if (!cat) return;
+
+  if (expandedCategory === idx) {
+    expandedCategory = null;
+    document.getElementById('detailContainer').innerHTML = '';
+    document.querySelectorAll('.ai-cat-card').forEach(c => c.style.opacity = '1');
+    document.querySelectorAll('.cat-expand').forEach(e => { if (e.textContent.includes('收起')) e.textContent = e.textContent.replace('收起 ▲', '展开') + ' →'; });
+    return;
+  }
+  expandedCategory = idx;
+  renderCategoryDetail(cat, idx);
+}
+
+function renderCategoryDetail(cat, idx) {
+  // Highlight active, dim others
+  document.querySelectorAll('.ai-cat-card').forEach((c, i) => { c.style.opacity = i === idx ? '1' : '0.4'; });
+  const expandEl = document.getElementById('catExpand' + idx);
+  if (expandEl) expandEl.textContent = '收起 ▲';
+
+  const priorityLabel = cat.priority === 'P0' ? '高优' : cat.priority === 'P1' ? '中优' : '普通';
+
+  let html = `<div class="ai-cat-detail ${cat.priority.toLowerCase()}">
+    <div class="detail-header">
+      <div>
+        <span class="cat-priority" style="display:inline-block">${cat.priority} · ${priorityLabel}</span>
+        <strong style="font-size:13px;margin-left:6px">${escapeHtml(cat.theme)}</strong>
+        <span style="font-size:11px;color:var(--text-muted);margin-left:8px">${cat.issue_count} 个关联 issue</span>
+      </div>
+      <span class="detail-collapse" onclick="event.stopPropagation();toggleCategory(${idx})">收起 ▲</span>
+    </div>
+    <div class="detail-suggestion">💡 AI 建议：${escapeHtml(cat.ai_suggestion || '暂无建议')}</div>
+    <table class="detail-table">
+      <thead><tr><th style="width:55px">#</th><th>标题</th><th style="width:80px">社区</th><th style="width:50px">评论</th></tr></thead>
+      <tbody>
+        ${(cat.issues || []).map(num => {
+          const issue = findIssueByNumber(num);
+          const title = issue ? issue.title : '(需更新 issues-data.json)';
+          const url = issue ? issue.html_url : `https://gitcode.com/gitcode-dev/euler-api-list/issues/${num}`;
+          const communities = issue ? (issue.communities || ['其他']).slice(0, 2).join(', ') : '-';
+          const comments = issue ? issue.comments : '-';
+          return `<tr>
+            <td style="color:var(--text-muted)">#${num}</td>
+            <td><a class="detail-issue-link" href="${url}" target="_blank" title="${escapeHtml(title)}">${escapeHtml(title)}</a></td>
+            <td style="font-size:10px;color:var(--text-muted)">${communities}</td>
+            <td style="text-align:center">${comments}</td>
+          </tr>`;
+        }).join('')}
+      </tbody>
+    </table>
+  </div>`;
+
+  document.getElementById('detailContainer').innerHTML = html;
+  document.getElementById('detailContainer').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
 </script>
 </body>
 </html>
