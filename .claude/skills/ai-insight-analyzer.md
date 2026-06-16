@@ -1,6 +1,7 @@
 ---
 name: ai-insight-analyzer
 description: 采集 GitCode issue 数据并用 AI 进行主题聚类和优先级分析，生成 ai-insights.json 供 Dashboard 使用
+triggers: 生成AI分析、运行洞察分析、更新AI洞察、分析issue趋势、刷新分析数据、/ai-insight-analyzer
 ---
 
 # AI Insight Analyzer
