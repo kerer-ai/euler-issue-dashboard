@@ -555,9 +555,19 @@ function setupEventDelegation() {
 
 async function init() {
   try {
-    const resp = await fetch('issues-data.json?t=' + Date.now());
-    allIssues = await resp.json();
-    generateInsight(allIssues);
+    const [respIssues, respAi] = await Promise.all([
+      fetch('issues-data.json?t=' + Date.now()),
+      fetch('ai-insights.json?t=' + Date.now()).catch(() => null)
+    ]);
+    allIssues = await respIssues.json();
+    let analyzedAt = null;
+    if (respAi && respAi.ok) {
+      try {
+        const aiData = await respAi.json();
+        analyzedAt = aiData.analyzed_at || null;
+      } catch(e) { /* ignore */ }
+    }
+    generateInsight(allIssues, analyzedAt);
     renderKpiRow(allIssues);
     renderTrendChart(allIssues);
     renderCommunityChart(allIssues);
@@ -588,9 +598,10 @@ function median(arr) {
   return sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
 }
 
-function generateInsight(issues) {
+function generateInsight(issues, analyzedAt) {
   if (!issues || !issues.length) return;
   const now = new Date();
+  const dataDate = analyzedAt ? new Date(analyzedAt) : now;
   const getAge = i => Math.floor((now - new Date(i.created_at)) / 86400000);
 
   const over30 = issues.filter(i => getAge(i) > 30).length;
@@ -639,7 +650,7 @@ function generateInsight(issues) {
 
   document.getElementById('insightBanner').innerHTML = html;
   document.getElementById('headerMeta').textContent =
-    `数据更新: ${now.toLocaleDateString('zh-CN')} · ${issues.length} 个 open issues`;
+    `数据更新: ${dataDate.toLocaleDateString('zh-CN')} · ${issues.length} 个 open issues`;
 }
 
 function getWeekKey(dateStr) {
