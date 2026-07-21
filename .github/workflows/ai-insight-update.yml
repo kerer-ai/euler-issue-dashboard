@@ -2,11 +2,6 @@ name: AI Insight Update
 
 on:
   workflow_dispatch:
-    inputs:
-      model:
-        description: 'opencode 模型 ID'
-        required: false
-        default: 'bailian/MiniMax-M3'
 
 permissions:
   contents: write
@@ -35,9 +30,8 @@ jobs:
         id: analyze
         run: |
           export PATH="$HOME/.opencode/bin:$HOME/.local/bin:$PATH"
-          MODEL="${{ github.event.inputs.model || 'bailian/MiniMax-M3' }}"
 
-          echo "=== Starting opencode (model: $MODEL) ==="
+          echo "=== Starting opencode (model: bailian/MiniMax-M3) ==="
 
           PROMPT="请使用 ai-insight-analyzer skill 采集 gitcode-dev/euler-api-list 仓库的全部 open issue 并进行 AI 分析。
 
@@ -55,7 +49,7 @@ jobs:
           # This prevents accidental token/key leakage from gc or opencode debug output.
           opencode run \
             --auto \
-            --model "$MODEL" \
+            --model bailian/MiniMax-M3 \
             --dir "$GITHUB_WORKSPACE" \
             "$PROMPT" > /tmp/opencode.log 2>&1 || ANALYSIS_EXIT=$?
 
