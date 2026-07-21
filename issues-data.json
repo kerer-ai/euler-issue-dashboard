@@ -89,14 +89,17 @@
     "communities": [
       "openEuler"
     ],
-    "status_tags": [],
+    "status_tags": [
+      "待验收"
+    ],
     "labels": [
       "openEuler",
-      "question"
+      "question",
+      "待验收"
     ],
     "created_at": "2026-07-17T17:13:51+08:00",
-    "updated_at": "2026-07-20T16:31:39+08:00",
-    "comments": 1,
+    "updated_at": "2026-07-21T17:41:25+08:00",
+    "comments": 2,
     "body": "\n\n## 其他问题反馈\n\n请描述您要提供的问题或反馈\n\n### 描述\n            \nAI检视排队时间过长，接近1h还是没出结果\nhttps://gitcode.com/openeuler/umdk/pull/2855\n"
   },
   {
