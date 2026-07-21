@@ -51,12 +51,24 @@ jobs:
           - 生成 ai-insights.json（有效 JSON，可被 Dashboard fetch 加载）
           - 最后验证两个 JSON 文件的有效性"
 
+          # Save output to file only; sanitize before printing to log.
+          # This prevents accidental token/key leakage from gc or opencode debug output.
           opencode run \
             --auto \
             --model "$MODEL" \
             --dir "$GITHUB_WORKSPACE" \
-            "$PROMPT" 2>&1 | tee /tmp/opencode.log
+            "$PROMPT" > /tmp/opencode.log 2>&1 || ANALYSIS_EXIT=$?
 
+          # Print sanitized log (filter lines that may contain secrets)
+          # GitHub masks secrets.* exact values, but transformed/truncated
+          # tokens bypass masking, so we filter proactively.
+          grep -ivE '(token|auth|password|secret|api[_-]?key|bearer|credential)' \
+            /tmp/opencode.log || true
+
+          if [[ -n "${ANALYSIS_EXIT:-}" ]]; then
+            echo "ERROR: opencode exited with code $ANALYSIS_EXIT"
+            exit 1
+          fi
           echo "=== opencode finished ==="
         timeout-minutes: 15
 
@@ -66,8 +78,9 @@ jobs:
           if [[ ! -f ai-insights.json ]] || [[ ! -f issues-data.json ]]; then
             echo "ERROR: output files missing"
             ls -la *.json 2>/dev/null || echo "No JSON files found"
-            echo "=== last 50 lines of opencode log ==="
-            tail -50 /tmp/opencode.log
+            echo "=== last 50 lines of opencode log (sanitized) ==="
+            grep -ivE '(token|auth|password|secret|api[_-]?key|bearer|credential)' \
+              /tmp/opencode.log | tail -50 || echo "(log empty or fully filtered)"
             exit 1
           fi
           AI_STATS=$(python3 -c "import json; d=json.load(open('ai-insights.json')); print(f'{d[\"total_issues\"]} issues, {d[\"category_count\"]} categories')")
@@ -119,7 +132,5 @@ jobs:
           else
             echo "❌ Analysis failed" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
-            tail -30 /tmp/opencode.log >> $GITHUB_STEP_SUMMARY 2>/dev/null || true
-            echo '```' >> $GITHUB_STEP_SUMMARY
+            echo "Check workflow logs for details." >> $GITHUB_STEP_SUMMARY
           fi

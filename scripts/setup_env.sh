@@ -53,7 +53,14 @@ fi
 
 echo "=== Configure GitCode CLI auth ==="
 if [[ -n "${GC_TOKEN:-}" ]]; then
-    gc auth login --token "$GC_TOKEN" 2>&1 || echo "WARNING: gc auth login failed (may already be logged in)"
+    # Suppress all output to avoid token leakage in CI logs.
+    # GitHub masks secrets.GC_TOKEN exact value, but gc CLI may transform
+    # the token (truncate, URL-encode, etc.) which bypasses masking.
+    if gc auth login --token "$GC_TOKEN" >/dev/null 2>&1; then
+        echo "GitCode CLI authenticated successfully"
+    else
+        echo "WARNING: gc auth login failed"
+    fi
 else
     echo "WARNING: GC_TOKEN not set"
 fi
