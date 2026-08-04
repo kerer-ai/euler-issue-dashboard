@@ -1,0 +1,165 @@
+name: verify-multiline-fromjson
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  # ============================================================
+  # Job A: 模拟新版 resolve_nightly_tests.py 的多行 <<EOF 输出
+  # 同时用 Python 精确控制 GITHUB_OUTPUT 的内容
+  # ============================================================
+  setup:
+    name: Setup - write both output formats
+    runs-on: ubuntu-latest
+    outputs:
+      multi_node_ml: ${{ steps.write.outputs.multi_node_ml }}
+      multi_node_sl: ${{ steps.write.outputs.multi_node_sl }}
+    steps:
+      - name: Write multiline and singleline outputs
+        id: write
+        shell: python3 {0}
+        run: |
+          import json, os
+
+          data = [{
+              "name": "Qwen3-235B-W8A8-EPLB",
+              "size": 2,
+              "config_file_path": "Qwen3-235B-W8A8-EPLB.yaml"
+          }]
+          json_str = json.dumps(data, separators=(",", ":"))
+
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              # 新版 PR 格式：多行 <<EOF
+              f.write(f"multi_node_ml<<EOF\n{json_str}\nEOF\n")
+              # 旧版 main 格式：单行
+              f.write(f"multi_node_sl={json.dumps(data)}\n")
+
+          print("=== GITHUB_OUTPUT written ===")
+          print(f"multi_node_ml (multiline): {json_str}")
+          print(f"multi_node_sl (singleline): {json.dumps(data)}")
+
+  # ============================================================
+  # Job B: 直接 fromJson 多行 output → 预期矩阵 0 条目 → skipped
+  # ============================================================
+  test-multiline-direct:
+    name: B-multiline-direct
+    needs: setup
+    if: always()
+    strategy:
+      matrix:
+        case: ${{ fromJson(needs.setup.outputs.multi_node_ml) }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: This step should NOT execute
+        run: |
+          echo "UNEXPECTED: matrix entry name=${{ matrix.case.name }}"
+
+  # ============================================================
+  # Job C: 中间 job 规范化多行 output → 预期矩阵正常展开 → success
+  # ============================================================
+  relay:
+    name: C-relay-normalize
+    needs: setup
+    if: always()
+    runs-on: ubuntu-latest
+    outputs:
+      normalized: ${{ needs.setup.outputs.multi_node_ml }}
+    steps:
+      - name: Pass through output (GHA normalizes multiline here)
+        run: echo "pass through ok"
+
+  test-via-relay:
+    name: C-via-relay
+    needs: relay
+    if: always()
+    strategy:
+      matrix:
+        case: ${{ fromJson(needs.relay.outputs.normalized) }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: This step SHOULD execute (two-step workaround)
+        run: |
+          echo "SUCCESS: matrix entry name=${{ matrix.case.name }}"
+          echo "SUCCESS: matrix entry size=${{ matrix.case.size }}"
+
+  # ============================================================
+  # Job D: 单行 output 直接 fromJson → 预期正常 → success (对照组)
+  # ============================================================
+  test-singleline-direct:
+    name: D-singleline-direct
+    needs: setup
+    if: always()
+    strategy:
+      matrix:
+        case: ${{ fromJson(needs.setup.outputs.multi_node_sl) }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: This step SHOULD execute (singleline works fine)
+        run: |
+          echo "SUCCESS: matrix entry name=${{ matrix.case.name }}"
+          echo "SUCCESS: matrix entry size=${{ matrix.case.size }}"
+
+  # ============================================================
+  # Summary
+  # ============================================================
+  summary:
+    name: Summary
+    needs: [test-multiline-direct, test-via-relay, test-singleline-direct]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Report
+        run: |
+          echo ""
+          echo "=============================================="
+          echo "  verify-multiline-fromjson 实验结果"
+          echo "=============================================="
+          echo ""
+          echo "  B-multiline-direct    : ${{ needs.test-multiline-direct.result }}"
+          echo "    → 多行 <<EOF + fromJson() 直接引用"
+          echo "    → 预期: skipped (fromJson 返回空数组 → 矩阵 0 条目)"
+          echo ""
+          echo "  C-via-relay           : ${{ needs.test-via-relay.result }}"
+          echo "    → 多行 <<EOF + 中间 job 规范化 + fromJson()"
+          echo "    → 预期: success (image_731 的 workaround)"
+          echo ""
+          echo "  D-singleline-direct   : ${{ needs.test-singleline-direct.result }}"
+          echo "    → 单行 key=json + fromJson() 直接引用"
+          echo "    → 预期: success (A2/A3 的对照组)"
+          echo ""
+          echo "=============================================="
+
+          FAIL=0
+          if [ "${{ needs.test-multiline-direct.result }}" != "skipped" ]; then
+            echo "❌ B-multiline-direct: 预期 skipped 但得到 ${{ needs.test-multiline-direct.result }}"
+            FAIL=1
+          else
+            echo "✅ B-multiline-direct: 正确 skipped (矩阵 0 条目)"
+          fi
+
+          if [ "${{ needs.test-via-relay.result }}" != "success" ]; then
+            echo "❌ C-via-relay: 预期 success 但得到 ${{ needs.test-via-relay.result }}"
+            FAIL=1
+          else
+            echo "✅ C-via-relay: 正确 success (两步 workaround 有效)"
+          fi
+
+          if [ "${{ needs.test-singleline-direct.result }}" != "success" ]; then
+            echo "❌ D-singleline-direct: 预期 success 但得到 ${{ needs.test-singleline-direct.result }}"
+            FAIL=1
+          else
+            echo "✅ D-singleline-direct: 正确 success (单行对照组)"
+          fi
+
+          if [ $FAIL -eq 1 ]; then
+            echo ""
+            echo "⚠️  部分结果与预期不一致"
+            exit 1
+          else
+            echo ""
+            echo "🎉 全部结果符合预期，根因验证成功！"
+          fi
