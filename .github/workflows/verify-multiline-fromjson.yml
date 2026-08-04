@@ -1,10 +1,19 @@
-name: verify-multiline-fromjson
+name: verify-root-cause
+
+# 验证问题：
+#   inputs.<var> 在非 workflow_dispatch 事件下 = 空字符串 ""
+#   空字符串传给 workflow_call 的 type:boolean → 被视为"已提供" → 压制 default
+#   → 空字符串无法转为 boolean → 矩阵 job 静默失败
+#
+# Ref: https://github.com/github/docs/issues/31513
+#   "An input that is evaluated to empty will be treated as present
+#    and suppress your default."
 
 on:
   workflow_dispatch:
     inputs:
       aop_enabled:
-        description: 'simulate A5 aop_enabled input (leave empty to simulate PR null)'
+        description: 'simulate aop_enabled (leave empty)'
         required: false
         default: false
         type: boolean
@@ -15,134 +24,121 @@ on:
 
 jobs:
   # ============================================================
-  # Job A: 写两种格式到 GITHUB_OUTPUT
+  # 准备数据：写一个 JSON 数组到 GITHUB_OUTPUT
   # ============================================================
   setup:
     name: Setup
     runs-on: ubuntu-latest
     outputs:
-      multi_node_ml: ${{ steps.write.outputs.multi_node_ml }}
-      multi_node_sl: ${{ steps.write.outputs.multi_node_sl }}
+      cases: ${{ steps.write.outputs.cases }}
     steps:
-      - name: Write outputs
+      - name: Write output
         id: write
         shell: python3 {0}
         run: |
           import json, os
-          data = [{"name": "test-case-1", "size": 2, "config_file_path": "test.yaml"}]
-          json_str = json.dumps(data, separators=(",", ":"))
+          data = [{"name":"test-1","size":2,"path":"test.yaml"}]
           with open(os.environ["GITHUB_OUTPUT"], "a") as f:
-              f.write(f"multi_node_ml<<EOF\n{json_str}\nEOF\n")
-              f.write(f"multi_node_sl={json.dumps(data)}\n")
-          print(f"multi_node_ml={json_str}")
-          print(f"multi_node_sl={json.dumps(data)}")
+              f.write(f"cases<<EOF\n{json.dumps(data, separators=(',',':'))}\nEOF\n")
 
   # ============================================================
-  # 实验组 1: 多行 + fromJson 直接引用 (已在上次验证通过)
+  # A: 对照组 — 不传 aop_multi_enabled，用 callee 的 default
   # ============================================================
-  test-ml-direct:
-    name: 1-ml-direct
+  A-control:
+    name: A-control
     needs: setup
-    if: always()
     strategy:
       matrix:
-        case: ${{ fromJson(needs.setup.outputs.multi_node_ml) }}
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "OK name=${{ matrix.case.name }}"
-
-  # ============================================================
-  # 实验组 2: 单行 + fromJson 直接引用 (对照组，已在上次验证通过)
-  # ============================================================
-  test-sl-direct:
-    name: 2-sl-direct
-    needs: setup
-    if: always()
-    strategy:
-      matrix:
-        case: ${{ fromJson(needs.setup.outputs.multi_node_sl) }}
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "OK name=${{ matrix.case.name }}"
-
-  # ============================================================
-  # 实验组 3: 模拟 A5 真实场景 ——
-  #   inputs.aop_enabled 在 push 事件下为 undefined
-  #   直接传递给 uses 的 type:boolean 参数
-  #   看矩阵是否还能展开
-  # ============================================================
-  test-a5-sim:
-    name: 3-a5-sim
-    needs: setup
-    if: always()
-    strategy:
-      matrix:
-        case: ${{ fromJson(needs.setup.outputs.multi_node_ml) }}
+        case: ${{ fromJson(needs.setup.outputs.cases) }}
     uses: ./.github/workflows/_verify-callee.yml
     with:
       should_run: true
       name: ${{ matrix.case.name }}
-      config_file_path: ${{ matrix.case.config_file_path }}
-      size: ${{ matrix.case.size }}
-      # === 关键：模拟 image_804 传 inputs.aop_enabled (push 事件下为 undefined) ===
+      config_file_path: ${{ matrix.case.path }}
+      # 不传 aop_multi_enabled — callee 的 default:false 生效
+
+  # ============================================================
+  # B: 实验组 — 传 inputs.aop_enabled (push事件下 = "")
+  #    空字符串抑制 callee 的 default → boolean 类型校验失败
+  # ============================================================
+  B-undefined-to-boolean:
+    name: B-undefined-to-boolean
+    needs: setup
+    strategy:
+      matrix:
+        case: ${{ fromJson(needs.setup.outputs.cases) }}
+    uses: ./.github/workflows/_verify-callee.yml
+    with:
+      should_run: true
+      name: ${{ matrix.case.name }}
+      config_file_path: ${{ matrix.case.path }}
+      # ↓ 模拟 image_804 bug: push 事件下 inputs.aop_enabled = ""
       aop_multi_enabled: ${{ inputs.aop_enabled }}
 
   # ============================================================
-  # 实验组 4: 跟实验组 3 一样但加了 fallback || false
+  # C: 修复组 — 传 inputs.aop_enabled || false
   # ============================================================
-  test-a5-fix:
-    name: 4-a5-fix
+  C-fixed:
+    name: C-fixed
     needs: setup
-    if: always()
     strategy:
       matrix:
-        case: ${{ fromJson(needs.setup.outputs.multi_node_ml) }}
+        case: ${{ fromJson(needs.setup.outputs.cases) }}
     uses: ./.github/workflows/_verify-callee.yml
     with:
       should_run: true
       name: ${{ matrix.case.name }}
-      config_file_path: ${{ matrix.case.config_file_path }}
-      size: ${{ matrix.case.size }}
-      # === 加了 fallback ===
+      config_file_path: ${{ matrix.case.path }}
+      # ↓ 修复: || false 兜底，空字符串 → false
       aop_multi_enabled: ${{ inputs.aop_enabled || false }}
 
   # ============================================================
-  # Summary
+  # 结果汇总
   # ============================================================
   summary:
     name: Summary
-    needs: [test-ml-direct, test-sl-direct, test-a5-sim, test-a5-fix]
+    needs: [A-control, B-undefined-to-boolean, C-fixed]
     if: always()
     runs-on: ubuntu-latest
     steps:
       - name: Report
         run: |
-          echo "=============================================="
-          echo "  verify-multiline-fromjson v2 实验结果"
-          echo "=============================================="
-          echo ""
-          echo "  1-ml-direct  : ${{ needs.test-ml-direct.result }}"
-          echo "    → fromJson(多行<<EOF) 直接引用 (v1已验证通过)"
-          echo ""
-          echo "  2-sl-direct  : ${{ needs.test-sl-direct.result }}"
-          echo "    → fromJson(单行) 直接引用 (对照组)"
-          echo ""
-          echo "  3-a5-sim     : ${{ needs.test-a5-sim.result }}"
-          echo "    → 模拟 image_804: inputs.aop_enabled 无 fallback"
-          echo "    → 若为 skipped 说明 undefined → boolean 导致矩阵展开失败"
-          echo ""
-          echo "  4-a5-fix     : ${{ needs.test-a5-fix.result }}"
-          echo "    → 修复方案: inputs.aop_enabled || false"
           echo ""
           echo "=============================================="
+          echo "  根因验证：inputs.<var> + type:boolean"
+          echo "  Ref: github/docs#31513"
+          echo "=============================================="
           echo ""
-          if [ "${{ needs.test-a5-sim.result }}" = "skipped" ] && [ "${{ needs.test-a5-fix.result }}" = "success" ]; then
-            echo "🎯 根因确认：inputs.aop_enabled 在非 workflow_dispatch 事件下为 undefined"
-            echo "   传递给 type:boolean → 矩阵静默失败 → 0 条目"
-            echo "   修复：加 || false fallback"
-          elif [ "${{ needs.test-a5-sim.result }}" = "success" ]; then
-            echo "🤔 3-a5-sim 成功了，inputs.aop_enabled undefined 不是根因"
-            echo "   问题可能在 pull_request 特有的上下文或 workflow_call 调用链"
+          echo "  A-control                  : ${{ needs.A-control.result }}"
+          echo "    → 不传 aop_multi_enabled，callee default:false 生效"
+          echo ""
+          echo "  B-undefined-to-boolean     : ${{ needs.B-undefined-to-boolean.result }}"
+          echo "    → ${{ inputs.aop_enabled }} = ''(push), 传给 type:boolean"
+          echo "    → 预期: failure (不在job list) — 空串抑制default, 无法转boolean"
+          echo ""
+          echo "  C-fixed                    : ${{ needs.C-fixed.result }}"
+          echo "    → ${{ inputs.aop_enabled || false }}"
+          echo "    → 预期: success"
+          echo ""
+          echo "=============================================="
+          echo ""
+          echo "  文档证实："
+          echo "  'An input that is evaluated to empty will be"
+          echo "   treated as present and suppress your default.'"
+          echo "  — github/docs#31513"
+          echo ""
+          echo "  对应 image_804 问题："
+          echo "  aop_multi_enabled: \${{ inputs.aop_enabled }}"
+          echo "  → PR事件下 inputs.aop_enabled = ''"
+          echo "  → 空串传给 _e2e_nightly_multi_node 的 type:boolean"
+          echo "  → 压制 default:false → boolean 类型校验失败"
+          echo "  → 矩阵 job 静默失败"
+          echo "  → 修复: \${{ inputs.aop_enabled || false }}"
+          echo ""
+          if [ "${{ needs.B-undefined-to-boolean.result }}" != "success" ] && \
+             [ "${{ needs.A-control.result }}" = "success" ] && \
+             [ "${{ needs.C-fixed.result }}" = "success" ]; then
+            echo "  ✅ 根因完全确认！"
           else
-            echo "⚠️  结果: 3-a5-sim=${{ needs.test-a5-sim.result }}, 4-a5-fix=${{ needs.test-a5-fix.result }}"
+            echo "  B result = ${{ needs.B-undefined-to-boolean.result }}"
           fi
