@@ -2,6 +2,12 @@ name: verify-multiline-fromjson
 
 on:
   workflow_dispatch:
+    inputs:
+      aop_enabled:
+        description: 'simulate A5 aop_enabled input (leave empty to simulate PR null)'
+        required: false
+        default: false
+        type: boolean
   push:
     branches:
       - main
@@ -9,44 +15,33 @@ on:
 
 jobs:
   # ============================================================
-  # Job A: 模拟新版 resolve_nightly_tests.py 的多行 <<EOF 输出
-  # 同时用 Python 精确控制 GITHUB_OUTPUT 的内容
+  # Job A: 写两种格式到 GITHUB_OUTPUT
   # ============================================================
   setup:
-    name: Setup - write both output formats
+    name: Setup
     runs-on: ubuntu-latest
     outputs:
       multi_node_ml: ${{ steps.write.outputs.multi_node_ml }}
       multi_node_sl: ${{ steps.write.outputs.multi_node_sl }}
     steps:
-      - name: Write multiline and singleline outputs
+      - name: Write outputs
         id: write
         shell: python3 {0}
         run: |
           import json, os
-
-          data = [{
-              "name": "Qwen3-235B-W8A8-EPLB",
-              "size": 2,
-              "config_file_path": "Qwen3-235B-W8A8-EPLB.yaml"
-          }]
+          data = [{"name": "test-case-1", "size": 2, "config_file_path": "test.yaml"}]
           json_str = json.dumps(data, separators=(",", ":"))
-
           with open(os.environ["GITHUB_OUTPUT"], "a") as f:
-              # 新版 PR 格式：多行 <<EOF
               f.write(f"multi_node_ml<<EOF\n{json_str}\nEOF\n")
-              # 旧版 main 格式：单行
               f.write(f"multi_node_sl={json.dumps(data)}\n")
-
-          print("=== GITHUB_OUTPUT written ===")
-          print(f"multi_node_ml (multiline): {json_str}")
-          print(f"multi_node_sl (singleline): {json.dumps(data)}")
+          print(f"multi_node_ml={json_str}")
+          print(f"multi_node_sl={json.dumps(data)}")
 
   # ============================================================
-  # Job B: 直接 fromJson 多行 output → 预期矩阵 0 条目 → skipped
+  # 实验组 1: 多行 + fromJson 直接引用 (已在上次验证通过)
   # ============================================================
-  test-multiline-direct:
-    name: B-multiline-direct
+  test-ml-direct:
+    name: 1-ml-direct
     needs: setup
     if: always()
     strategy:
@@ -54,43 +49,13 @@ jobs:
         case: ${{ fromJson(needs.setup.outputs.multi_node_ml) }}
     runs-on: ubuntu-latest
     steps:
-      - name: This step should NOT execute
-        run: |
-          echo "UNEXPECTED: matrix entry name=${{ matrix.case.name }}"
+      - run: echo "OK name=${{ matrix.case.name }}"
 
   # ============================================================
-  # Job C: 中间 job 规范化多行 output → 预期矩阵正常展开 → success
+  # 实验组 2: 单行 + fromJson 直接引用 (对照组，已在上次验证通过)
   # ============================================================
-  relay:
-    name: C-relay-normalize
-    needs: setup
-    if: always()
-    runs-on: ubuntu-latest
-    outputs:
-      normalized: ${{ needs.setup.outputs.multi_node_ml }}
-    steps:
-      - name: Pass through output (GHA normalizes multiline here)
-        run: echo "pass through ok"
-
-  test-via-relay:
-    name: C-via-relay
-    needs: relay
-    if: always()
-    strategy:
-      matrix:
-        case: ${{ fromJson(needs.relay.outputs.normalized) }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: This step SHOULD execute (two-step workaround)
-        run: |
-          echo "SUCCESS: matrix entry name=${{ matrix.case.name }}"
-          echo "SUCCESS: matrix entry size=${{ matrix.case.size }}"
-
-  # ============================================================
-  # Job D: 单行 output 直接 fromJson → 预期正常 → success (对照组)
-  # ============================================================
-  test-singleline-direct:
-    name: D-singleline-direct
+  test-sl-direct:
+    name: 2-sl-direct
     needs: setup
     if: always()
     strategy:
@@ -98,68 +63,86 @@ jobs:
         case: ${{ fromJson(needs.setup.outputs.multi_node_sl) }}
     runs-on: ubuntu-latest
     steps:
-      - name: This step SHOULD execute (singleline works fine)
-        run: |
-          echo "SUCCESS: matrix entry name=${{ matrix.case.name }}"
-          echo "SUCCESS: matrix entry size=${{ matrix.case.size }}"
+      - run: echo "OK name=${{ matrix.case.name }}"
+
+  # ============================================================
+  # 实验组 3: 模拟 A5 真实场景 ——
+  #   inputs.aop_enabled 在 push 事件下为 undefined
+  #   直接传递给 uses 的 type:boolean 参数
+  #   看矩阵是否还能展开
+  # ============================================================
+  test-a5-sim:
+    name: 3-a5-sim
+    needs: setup
+    if: always()
+    strategy:
+      matrix:
+        case: ${{ fromJson(needs.setup.outputs.multi_node_ml) }}
+    uses: ./.github/workflows/_verify-callee.yml
+    with:
+      should_run: true
+      name: ${{ matrix.case.name }}
+      config_file_path: ${{ matrix.case.config_file_path }}
+      size: ${{ matrix.case.size }}
+      # === 关键：模拟 image_804 传 inputs.aop_enabled (push 事件下为 undefined) ===
+      aop_multi_enabled: ${{ inputs.aop_enabled }}
+
+  # ============================================================
+  # 实验组 4: 跟实验组 3 一样但加了 fallback || false
+  # ============================================================
+  test-a5-fix:
+    name: 4-a5-fix
+    needs: setup
+    if: always()
+    strategy:
+      matrix:
+        case: ${{ fromJson(needs.setup.outputs.multi_node_ml) }}
+    uses: ./.github/workflows/_verify-callee.yml
+    with:
+      should_run: true
+      name: ${{ matrix.case.name }}
+      config_file_path: ${{ matrix.case.config_file_path }}
+      size: ${{ matrix.case.size }}
+      # === 加了 fallback ===
+      aop_multi_enabled: ${{ inputs.aop_enabled || false }}
 
   # ============================================================
   # Summary
   # ============================================================
   summary:
     name: Summary
-    needs: [test-multiline-direct, test-via-relay, test-singleline-direct]
+    needs: [test-ml-direct, test-sl-direct, test-a5-sim, test-a5-fix]
     if: always()
     runs-on: ubuntu-latest
     steps:
       - name: Report
         run: |
+          echo "=============================================="
+          echo "  verify-multiline-fromjson v2 实验结果"
+          echo "=============================================="
+          echo ""
+          echo "  1-ml-direct  : ${{ needs.test-ml-direct.result }}"
+          echo "    → fromJson(多行<<EOF) 直接引用 (v1已验证通过)"
+          echo ""
+          echo "  2-sl-direct  : ${{ needs.test-sl-direct.result }}"
+          echo "    → fromJson(单行) 直接引用 (对照组)"
+          echo ""
+          echo "  3-a5-sim     : ${{ needs.test-a5-sim.result }}"
+          echo "    → 模拟 image_804: inputs.aop_enabled 无 fallback"
+          echo "    → 若为 skipped 说明 undefined → boolean 导致矩阵展开失败"
+          echo ""
+          echo "  4-a5-fix     : ${{ needs.test-a5-fix.result }}"
+          echo "    → 修复方案: inputs.aop_enabled || false"
           echo ""
           echo "=============================================="
-          echo "  verify-multiline-fromjson 实验结果"
-          echo "=============================================="
           echo ""
-          echo "  B-multiline-direct    : ${{ needs.test-multiline-direct.result }}"
-          echo "    → 多行 <<EOF + fromJson() 直接引用"
-          echo "    → 预期: skipped (fromJson 返回空数组 → 矩阵 0 条目)"
-          echo ""
-          echo "  C-via-relay           : ${{ needs.test-via-relay.result }}"
-          echo "    → 多行 <<EOF + 中间 job 规范化 + fromJson()"
-          echo "    → 预期: success (image_731 的 workaround)"
-          echo ""
-          echo "  D-singleline-direct   : ${{ needs.test-singleline-direct.result }}"
-          echo "    → 单行 key=json + fromJson() 直接引用"
-          echo "    → 预期: success (A2/A3 的对照组)"
-          echo ""
-          echo "=============================================="
-
-          FAIL=0
-          if [ "${{ needs.test-multiline-direct.result }}" != "skipped" ]; then
-            echo "❌ B-multiline-direct: 预期 skipped 但得到 ${{ needs.test-multiline-direct.result }}"
-            FAIL=1
+          if [ "${{ needs.test-a5-sim.result }}" = "skipped" ] && [ "${{ needs.test-a5-fix.result }}" = "success" ]; then
+            echo "🎯 根因确认：inputs.aop_enabled 在非 workflow_dispatch 事件下为 undefined"
+            echo "   传递给 type:boolean → 矩阵静默失败 → 0 条目"
+            echo "   修复：加 || false fallback"
+          elif [ "${{ needs.test-a5-sim.result }}" = "success" ]; then
+            echo "🤔 3-a5-sim 成功了，inputs.aop_enabled undefined 不是根因"
+            echo "   问题可能在 pull_request 特有的上下文或 workflow_call 调用链"
           else
-            echo "✅ B-multiline-direct: 正确 skipped (矩阵 0 条目)"
-          fi
-
-          if [ "${{ needs.test-via-relay.result }}" != "success" ]; then
-            echo "❌ C-via-relay: 预期 success 但得到 ${{ needs.test-via-relay.result }}"
-            FAIL=1
-          else
-            echo "✅ C-via-relay: 正确 success (两步 workaround 有效)"
-          fi
-
-          if [ "${{ needs.test-singleline-direct.result }}" != "success" ]; then
-            echo "❌ D-singleline-direct: 预期 success 但得到 ${{ needs.test-singleline-direct.result }}"
-            FAIL=1
-          else
-            echo "✅ D-singleline-direct: 正确 success (单行对照组)"
-          fi
-
-          if [ $FAIL -eq 1 ]; then
-            echo ""
-            echo "⚠️  部分结果与预期不一致"
-            exit 1
-          else
-            echo ""
-            echo "🎉 全部结果符合预期，根因验证成功！"
+            echo "⚠️  结果: 3-a5-sim=${{ needs.test-a5-sim.result }}, 4-a5-fix=${{ needs.test-a5-fix.result }}"
           fi

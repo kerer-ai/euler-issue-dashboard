@@ -1,0 +1,38 @@
+name: _verify-callee
+
+on:
+  workflow_call:
+    inputs:
+      should_run:
+        required: true
+        type: boolean
+      name:
+        required: false
+        type: string
+        default: ''
+      config_file_path:
+        required: false
+        type: string
+        default: ''
+      size:
+        required: false
+        type: string
+        default: '1'
+      # 关键：模拟 _e2e_nightly_multi_node.yaml 的 aop_multi_enabled 定义
+      aop_multi_enabled:
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  e2e:
+    name: callee-${{ inputs.name || inputs.config_file_path || 'unnamed' }}
+    runs-on: ubuntu-latest
+    if: inputs.should_run == true
+    steps:
+      - name: Run
+        run: |
+          echo "aop_multi_enabled=${{ inputs.aop_multi_enabled }}"
+          echo "name=${{ inputs.name }}"
+          echo "config_file_path=${{ inputs.config_file_path }}"
+          echo "size=${{ inputs.size }}"
